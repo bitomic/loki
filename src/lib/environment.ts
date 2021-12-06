@@ -1,8 +1,6 @@
 import 'dotenv/config'
 
-const environmentVariables = [
-	'NODE_ENV'
-] as const
+const environmentVariables = [ 'NODE_ENV' ] as const
 type Env = typeof environmentVariables[ number ]
 
 export const env = {} as Record<Env, string>
