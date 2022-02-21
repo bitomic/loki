@@ -13,7 +13,7 @@
     "lint:fix": "eslint src/ --fix --ext .ts --cache",
     "start": "yarn node dist/main.js"
   },
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.0",
   "dependencies": {
     "dotenv": "^16.0.0"
   },
