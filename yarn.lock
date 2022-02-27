@@ -32,6 +32,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bitomic/eslint-config@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@bitomic/eslint-config@npm:1.0.0"
+  checksum: ae2757ac5b8062234b3d8cdfb80d281a55e4e583dbd2a2026e12eb98839ae3daad29e8e441e0c62b803e126ffb3d07eeed0794fe269e491f3259bd8608e59138
+  languageName: node
+  linkType: hard
+
 "@commitlint/cli@npm:^16.2.1":
   version: 16.2.1
   resolution: "@commitlint/cli@npm:16.2.1"
@@ -2900,6 +2907,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "yarn-template@workspace:."
   dependencies:
+    "@bitomic/eslint-config": ^1.0.0
     "@commitlint/cli": ^16.2.1
     "@commitlint/config-conventional": ^16.2.1
     "@types/node": ^16.11.26
