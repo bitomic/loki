@@ -984,13 +984,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.0":
-  version: 16.0.0
-  resolution: "dotenv@npm:16.0.0"
-  checksum: 664cebb51f0a9a1d1b930f51f0271e72e26d62feaecc9dc03df39453dd494b4e724809ca480fb3ec3213382b1ed3f791aaeb83569a137f9329ce58efd4853dbf
-  languageName: node
-  linkType: hard
-
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -2614,6 +2607,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-dotenv@npm:^0.8.3":
+  version: 0.8.3
+  resolution: "ts-dotenv@npm:0.8.3"
+  checksum: 286fa123b66a6dc0a9b7249a74b83c06a2bc8be77b7c9cbbeeb73219090d3af267f2baa590a0e5f1fcfca99c3a170f3386ca02dd1b48b84a72d0087377e50443
+  languageName: node
+  linkType: hard
+
 "ts-node@npm:^10.4.0":
   version: 10.4.0
   resolution: "ts-node@npm:10.4.0"
@@ -2905,11 +2905,11 @@ __metadata:
     "@types/node": ^16.11.26
     "@typescript-eslint/eslint-plugin": ^5.12.1
     "@typescript-eslint/parser": ^5.12.1
-    dotenv: ^16.0.0
     eslint: ^8.10.0
     husky: ^7.0.4
     lint-staged: ^12.3.4
     rimraf: ^3.0.2
+    ts-dotenv: ^0.8.3
     typescript: ^4.5.5
   languageName: unknown
   linkType: soft
