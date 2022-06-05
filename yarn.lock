@@ -424,6 +424,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lua-json@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@types/lua-json@npm:1.0.1"
+  checksum: bac66a8eb9244bb2a0b1b13c13bb7183e12a2f17dd193d264c4402244e7f2639f8f58082f3e95eb7efb26ea887361f03823abd77d25d939c327b206f3ded7b76
+  languageName: node
+  linkType: hard
+
 "@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
@@ -2413,7 +2420,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.21":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -2445,6 +2452,25 @@ __metadata:
   version: 7.10.1
   resolution: "lru-cache@npm:7.10.1"
   checksum: e8b190d71ed0fcd7b29c71a3e9b01f851c92d1ef8865ff06b5581ca991db1e5e006920ed4da8b56da1910664ed51abfd76c46fb55e82ac252ff6c970ff910d72
+  languageName: node
+  linkType: hard
+
+"lua-json@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "lua-json@npm:1.0.0"
+  dependencies:
+    lodash: ^4.17.11
+    luaparse: ^0.2.1
+  checksum: 0cd0ec9b39e1147dd7fa23c1d75aaebaee0d2106e663834e75422aec1bf218d79beda9204f50fc3b6b9f0e7f68d9e31ba1d99588613bad7f659575c562af48a1
+  languageName: node
+  linkType: hard
+
+"luaparse@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "luaparse@npm:0.2.1"
+  bin:
+    luaparse: ./bin/luaparse
+  checksum: db5fb4c535b21475869454eedf7f919e5c488db5fc1ef41397bab717e4a26932f50ad91d96101eb6a1e4a3a6e8a7953e816ac5bc2594a1baadb009a38b5eacd5
   languageName: node
   linkType: hard
 
@@ -4159,6 +4185,7 @@ __metadata:
     "@bitomic/eslint-config": ^1.0.0
     "@commitlint/cli": ^17.0.2
     "@commitlint/config-conventional": ^17.0.2
+    "@types/lua-json": ^1.0.1
     "@types/node": ^16.11.38
     "@typescript-eslint/eslint-plugin": ^5.27.0
     "@typescript-eslint/parser": ^5.27.0
@@ -4167,6 +4194,7 @@ __metadata:
     husky: ^8.0.1
     ioredis: ^5.0.6
     lint-staged: ^13.0.0
+    lua-json: ^1.0.0
     mw.js: ^2.4.1
     mwparser: ^1.3.3
     node-html-parser: ^5.3.3
