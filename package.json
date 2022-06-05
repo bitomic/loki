@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "bullmq": "^1.85.3",
+    "ioredis": "^5.0.6",
     "ts-dotenv": "^0.8.3"
   },
   "publishConfig": {
