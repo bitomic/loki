@@ -1,5 +1,5 @@
 {
-  "name": "yarn-template",
+  "name": "loki",
   "version": "1.0.0",
   "main": "dist/main.js",
   "author": "bitomic",
