@@ -57,7 +57,7 @@ export default class {
 		} ) ).slice( 0, 3 )
 
 		const bot = await getFandomBot()
-		this.logger.debug( await bot.whoAmI() )
+		this.logger.info( await bot.whoAmI() )
 
 		for ( const item of items ) {
 			if ( item.id <= lastWikiNews.id ) continue
