@@ -1,6 +1,7 @@
-import { fandom, getFandomBot } from '../util'
 import { format, parse as luaParse } from 'lua-json'
+import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
+import { getFandomBot } from '../util'
 import type { HTMLElement } from 'node-html-parser'
 import { parse as htmlParse } from 'node-html-parser'
 import type { Job } from 'bullmq'
@@ -27,7 +28,7 @@ export default class {
 	protected readonly wiki: FandomWiki
 
 	public constructor() {
-		this.wiki = fandom.getWiki( 'es.pokemon-unite' )
+		this.wiki = Fandom.getWiki( 'es.pokemon-unite' )
 		const intl = new Intl.DateTimeFormat( 'es', { month: 'long' } )
 		for ( let i = 0; i < 12; i++ ) {
 			this.MONTHS.push( intl.format( new Date( 2022, i, 15 ) ) )
@@ -57,7 +58,7 @@ export default class {
 		} ) ).slice( 0, 3 )
 
 		const bot = await getFandomBot()
-		this.logger.info( await bot.whoAmI() )
+		await bot.setWiki( this.wiki )
 
 		for ( const item of items ) {
 			if ( item.id <= lastWikiNews.id ) continue
