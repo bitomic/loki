@@ -3967,6 +3967,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "undici@npm:5.4.0"
+  checksum: 2852397ee1dbb2b3ad58166520ec30f4f0143895f6e7b157dbedfac4e43b522a710a3927be61a67b2ae791190973f206d30785564ece7675e08133427cebaaa1
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
   resolution: "unique-filename@npm:1.1.1"
@@ -4201,6 +4208,7 @@ __metadata:
     rimraf: ^3.0.2
     ts-dotenv: ^0.8.3
     typescript: ^4.7.3
+    undici: ^5.4.0
   languageName: unknown
   linkType: soft
 
