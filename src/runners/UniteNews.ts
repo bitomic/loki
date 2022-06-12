@@ -7,7 +7,7 @@ import { parse as htmlParse } from 'node-html-parser'
 import type { Job } from 'bullmq'
 import { pino } from '../lib'
 import { request } from 'undici'
-import { UniteNewsName } from '../producers'
+import { UniteNewsName } from '../producers/wiki/UniteNews'
 
 interface INewsItem {
 	date: string
