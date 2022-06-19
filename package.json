@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "bullmq": "^1.86.2",
-    "colorette": "^2.0.17",
+    "colorette": "^2.0.19",
     "ioredis": "^5.0.6",
     "lua-json": "^1.0.0",
     "mw.js": "^2.4.1",
