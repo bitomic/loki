@@ -1,6 +1,5 @@
 .env
 .eslintcache
-.eslintignore
 .pnp.*
 .yarn/*
 !.yarn/patches
