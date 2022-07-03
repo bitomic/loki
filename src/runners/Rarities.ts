@@ -4,7 +4,7 @@ import { format } from 'lua-json'
 import type { Job } from 'bullmq'
 import { RaritiesName } from '../producers'
 
-export default class Test {
+export default class {
 	protected readonly logger = pino.child( {
 		worker: RaritiesName
 	} )
