@@ -37,4 +37,6 @@ type Events = Array<keyof QueueEventsListener>
 			events.on( event, ( job: EventJob ): void => void log( 'error', event, job, queue ) )
 		}
 	}
+
+	pino.info( 'Loki is ready!' )
 } )()
