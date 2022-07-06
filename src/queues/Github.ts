@@ -14,8 +14,7 @@ export const GithubQueue = new Queue( GithubName, {
 		backoff: {
 			delay: 1000,
 			type: 'exponential'
-		},
-		removeOnComplete: true
+		}
 	}
 } )
 
