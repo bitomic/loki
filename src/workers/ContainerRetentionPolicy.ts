@@ -6,5 +6,5 @@ import { Worker } from 'bullmq'
 new Worker(
 	GithubName,
 	job => new ContainerRetentionPolicy().run( job ),
-	{ connection: redis }
+	{ connection: redis, lockDuration: 1000 * 60 * 15 }
 )
