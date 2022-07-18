@@ -43,7 +43,7 @@
     "pino": "^8.2.0",
     "pino-pretty": "^8.1.0",
     "ts-dotenv": "^0.8.3",
-    "undici": "^5.7.0"
+    "undici": "^5.8.0"
   },
   "publishConfig": {
     "access": "public"
