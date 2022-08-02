@@ -14,7 +14,8 @@ export const WikiQueue = new Queue( WikiName, {
 		backoff: {
 			delay: 1000,
 			type: 'exponential'
-		}
+		},
+		removeOnComplete: true
 	}
 } )
 
