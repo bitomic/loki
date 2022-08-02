@@ -15,6 +15,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  REPOSITORY_NAME: ${{ github.event.repository.name }}
 
 jobs:
   Publish:
@@ -24,7 +25,7 @@ jobs:
       deploy_tag: ${{ steps.save_tag.outputs.tag }}
     steps:
       - name: Checkout Project
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
         with:
           submodules: true
           
@@ -33,7 +34,7 @@ jobs:
         uses: saionaro/extract-package-version@de8268c348d3a9ed3514c86a9ad8d4568ab8b49e # tag=v1.1.1
         
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b # tag=v2.0.0
+        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # tag=v1.14.1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -41,7 +42,7 @@ jobs:
           
       - name: Extract metadata for Docker images
         id: meta
-        uses: docker/metadata-action@69f6fc9d46f2f8bf0d5491e4aabe0bb8c6a4678a # tag=v4
+        uses: docker/metadata-action@f2a13332ac1ce8c0a71aeac48a150dbb1838ab67 # tag=v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
@@ -52,7 +53,7 @@ jobs:
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@1cb9d22b932e4832bb29793b7777ec860fc1cde0 # tag=v3.1.0
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a # tag=v2.10.0
         with:
           context: .
           push: true
@@ -68,9 +69,9 @@ jobs:
     needs: [Publish]
     steps:
       - name: Checkout Project
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
         with:
           submodules: true
           
       - name: Deploy image to production server
-        run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ secrets.CAPROVER_APP }} --imageName ghcr.io/bitomic/loki:${{ needs.Publish.outputs.deploy_tag }}
+        run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ env.REPOSITORY_NAME }} --imageName ghcr.io/bitomic/${{ env.REPOSITORY_NAME }}:${{ needs.Publish.outputs.deploy_tag }}
