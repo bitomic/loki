@@ -1,7 +1,7 @@
 import './producers'
 import './workers'
+import { GithubEvents, GithubQueue, WikiEvents, WikiQueue } from './queues'
 import type { Queue, QueueEventsListener } from 'bullmq'
-import { WikiEvents, WikiQueue } from './queues'
 import { pino } from './lib'
 
 interface EventJob {
@@ -22,6 +22,7 @@ type Events = Array<keyof QueueEventsListener>
 	}
 
 	const queues = [
+		{ events: GithubEvents, queue: GithubQueue },
 		{ events: WikiEvents, queue: WikiQueue }
 	]
 	for ( const { events, queue } of queues ) {
