@@ -504,6 +504,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/core@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "@octokit/core@npm:4.0.5"
+  dependencies:
+    "@octokit/auth-token": ^3.0.0
+    "@octokit/graphql": ^5.0.0
+    "@octokit/request": ^6.0.0
+    "@octokit/request-error": ^3.0.0
+    "@octokit/types": ^7.0.0
+    before-after-hook: ^2.2.0
+    universal-user-agent: ^6.0.0
+  checksum: 6e4a2161d22b9cb24cd1cf702e6d18200fc48a29dc66db08c37809d65243d29429123652072126d9f161e45aef6a57e72a5d56d7e975829c190e8c3c46b3f1b9
+  languageName: node
+  linkType: hard
+
 "@octokit/endpoint@npm:^6.0.1":
   version: 6.0.12
   resolution: "@octokit/endpoint@npm:6.0.12"
@@ -705,17 +720,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/request@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@octokit/request@npm:6.2.0"
+"@octokit/request@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@octokit/request@npm:6.2.1"
   dependencies:
     "@octokit/endpoint": ^7.0.0
     "@octokit/request-error": ^3.0.0
-    "@octokit/types": ^6.16.1
+    "@octokit/types": ^7.0.0
     is-plain-object: ^5.0.0
     node-fetch: ^2.6.7
     universal-user-agent: ^6.0.0
-  checksum: d66a2248e4cc15b7b8d558f0d947b0ec6e6deca121922b81a99df916e69fb98ecf2269ec03beb933f3df4006b60a8e2a843a67304d08f90aed8b8edcea7f71b2
+  checksum: f0a3e878de8c2e6930da5af835d9a3750800eff9ba66af02400dc75238475a9b9c2c5473047792c0f37c2c371095a36485c0729c419873bdccb6058bb8637685
   languageName: node
   linkType: hard
 
@@ -3257,8 +3272,8 @@ __metadata:
     "@bitomic/utilities": ^1.0.0
     "@commitlint/cli": ^17.0.3
     "@commitlint/config-conventional": ^17.0.3
-    "@octokit/core": ^4.0.4
-    "@octokit/request": ^6.2.0
+    "@octokit/core": ^4.0.5
+    "@octokit/request": ^6.2.1
     "@types/lua-json": ^1.0.1
     "@types/node": ^16.11.51
     "@typescript-eslint/eslint-plugin": ^5.33.1
@@ -3272,9 +3287,9 @@ __metadata:
     lua-json: ^1.0.0
     mw.js: ^2.4.1
     mwparser: ^1.3.3
-    node-html-parser: ^5.3.3
+    node-html-parser: ^5.4.2-0
     octokit: ^2.0.7
-    pino: ^8.4.0
+    pino: ^8.4.2
     pino-pretty: ^9.0.1
     rimraf: ^3.0.2
     ts-dotenv: ^0.8.3
@@ -3720,13 +3735,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-parser@npm:^5.3.3":
-  version: 5.3.3
-  resolution: "node-html-parser@npm:5.3.3"
+"node-html-parser@npm:^5.4.2-0":
+  version: 5.4.2-0
+  resolution: "node-html-parser@npm:5.4.2-0"
   dependencies:
     css-select: ^4.2.1
     he: 1.2.0
-  checksum: 57c61d5c34fd8c6139ef497cd8d7a4b1b8f4c127986d7a8624f83ba31d3e4a5fdea2684b021989f6bf920d517f8075068f05f031e8813e84fc42569906704cad
+  checksum: 00a5fe37db6755f5b8529e350f1db86b6071b412609a64681ea42b30a36d70d4d55b8d3f8d2f33dcee6ab7524f25f509a998ae7e5b90391da16908c076c3199b
   languageName: node
   linkType: hard
 
@@ -4070,9 +4085,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino@npm:^8.4.0":
-  version: 8.4.0
-  resolution: "pino@npm:8.4.0"
+"pino@npm:^8.4.2":
+  version: 8.4.2
+  resolution: "pino@npm:8.4.2"
   dependencies:
     atomic-sleep: ^1.0.0
     fast-redact: ^3.1.1
@@ -4087,7 +4102,7 @@ __metadata:
     thread-stream: ^2.0.0
   bin:
     pino: bin.js
-  checksum: ccb5d3d83ae9b9fc17b6a8f44a0204cbb57036322cc7ed6cfaba2d1cebacbeaadebf7c9c047bc0b8136654698ca7f2b6671243f5151998a8f5e0bb431e7a2476
+  checksum: 870ee673d54a8e0b03766f39800e9805023f7f5efbbd33f61142febcdc556e24463d1d2af182c9b504e44ffa82bf692d67e4c284a64ea2cf96e166a13d77a0bc
   languageName: node
   linkType: hard
 
