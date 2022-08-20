@@ -31,7 +31,7 @@
   "dependencies": {
     "@bitomic/utilities": "^1.0.0",
     "@octokit/core": "^4.0.4",
-    "@octokit/request": "^6.2.0",
+    "@octokit/request": "^6.2.1",
     "bullmq": "^1.89.1",
     "colorette": "^2.0.19",
     "ioredis": "^5.2.2",

@@ -705,17 +705,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/request@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@octokit/request@npm:6.2.0"
+"@octokit/request@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@octokit/request@npm:6.2.1"
   dependencies:
     "@octokit/endpoint": ^7.0.0
     "@octokit/request-error": ^3.0.0
-    "@octokit/types": ^6.16.1
+    "@octokit/types": ^7.0.0
     is-plain-object: ^5.0.0
     node-fetch: ^2.6.7
     universal-user-agent: ^6.0.0
-  checksum: d66a2248e4cc15b7b8d558f0d947b0ec6e6deca121922b81a99df916e69fb98ecf2269ec03beb933f3df4006b60a8e2a843a67304d08f90aed8b8edcea7f71b2
+  checksum: f0a3e878de8c2e6930da5af835d9a3750800eff9ba66af02400dc75238475a9b9c2c5473047792c0f37c2c371095a36485c0729c419873bdccb6058bb8637685
   languageName: node
   linkType: hard
 
@@ -3258,7 +3258,7 @@ __metadata:
     "@commitlint/cli": ^17.0.3
     "@commitlint/config-conventional": ^17.0.3
     "@octokit/core": ^4.0.4
-    "@octokit/request": ^6.2.0
+    "@octokit/request": ^6.2.1
     "@types/lua-json": ^1.0.1
     "@types/node": ^16.11.51
     "@typescript-eslint/eslint-plugin": ^5.33.1
