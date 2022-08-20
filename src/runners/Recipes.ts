@@ -1,6 +1,6 @@
 import { env, pino } from '../lib'
-import { parse, UnnamedParameter } from 'mwparser'
 import { Fandom, Wiki } from 'mw.js'
+import { parse, UnnamedParameter } from 'mwparser'
 import { format } from 'lua-json'
 import type { Job } from 'bullmq'
 import { RecipesName } from '../producers'
