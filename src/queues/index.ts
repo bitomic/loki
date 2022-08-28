@@ -1,2 +1,1 @@
-export * from './Github'
-export * from './Wiki'
+export * from './Loki'

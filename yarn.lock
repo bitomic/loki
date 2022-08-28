@@ -270,6 +270,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discordjs/collection@npm:^1.0.1":
+  version: 1.1.0
+  resolution: "@discordjs/collection@npm:1.1.0"
+  checksum: 9a78763a181130d91b51d0d93553fd75d09d0aabd6556890a35404bbefe9c5112cb74c3b1e486a213607f6577f9d2d8ee94ee3177652116bac80516e7d3083d6
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.3.1":
   version: 1.3.1
   resolution: "@eslint/eslintrc@npm:1.3.1"
@@ -810,6 +817,24 @@ __metadata:
     "@octokit/webhooks-types": 6.2.4
     aggregate-error: ^3.1.0
   checksum: 33a59280ca987235e5c2d11c331da026e07384cc1f5ef6305c4e3d2f3f9fb3a62f7af254ce0c07c317b01b50f2763e6dd6968ab9d60ba39e0474d505848ee1f3
+  languageName: node
+  linkType: hard
+
+"@sapphire/pieces@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "@sapphire/pieces@npm:3.5.1"
+  dependencies:
+    "@discordjs/collection": ^1.0.1
+    "@sapphire/utilities": ^3.9.2
+    tslib: ^2.4.0
+  checksum: 200ff646f7e49d542f16779587ea373f9a7a032686ecc0fdf5948e185d009f2cd365dfb6d77793daaad9c8f97bc2d0932dad46cee04a6b4483f0cb32dd971760
+  languageName: node
+  linkType: hard
+
+"@sapphire/utilities@npm:^3.9.2":
+  version: 3.9.2
+  resolution: "@sapphire/utilities@npm:3.9.2"
+  checksum: eeef33b03b802e931ada752b8c335cc8bde4017f8029b577b0247e3f3d2b57bf5f1936b2c8c29aef5e2c6975d9b162363e4c5c434c4fead0bba74253d067b4d9
   languageName: node
   linkType: hard
 
@@ -3241,6 +3266,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.1.0
     "@octokit/core": ^4.0.5
     "@octokit/request": ^6.2.1
+    "@sapphire/pieces": ^3.5.1
     "@types/lua-json": ^1.0.1
     "@types/node": ^16.11.56
     "@typescript-eslint/eslint-plugin": ^5.35.1
@@ -3260,6 +3286,8 @@ __metadata:
     typescript: ^4.8.2
     undici: ^5.10.0
     winston: ^3.8.1
+  bin:
+    task: dist/bin.js
   languageName: unknown
   linkType: soft
 
@@ -4750,7 +4778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.4.0":
   version: 2.4.0
   resolution: "tslib@npm:2.4.0"
   checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
