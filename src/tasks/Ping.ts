@@ -2,6 +2,8 @@ import type { JobsOptions } from 'bullmq'
 import { Task } from '../framework'
 
 export class UserTask extends Task {
+	public override enabled = false
+
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			cron: '*/5 * * * * *'
