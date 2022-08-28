@@ -2,7 +2,7 @@ import './producers'
 import './workers'
 import { GithubEvents, GithubQueue, WikiEvents, WikiQueue } from './queues'
 import type { Queue, QueueEventsListener } from 'bullmq'
-import { pino } from './lib'
+import { logger } from './lib'
 
 interface EventJob {
 	jobId: string
@@ -18,7 +18,7 @@ type Events = Array<keyof QueueEventsListener>
 
 	const log = async ( level: 'error' | 'info' | 'warn', event: string, job: EventJob, queue: Queue ): Promise<void> => {
 		const name = job.name || ( await queue.getJob( job.jobId ) )?.name || 'unknown'
-		pino[ level ]( `${ event } - ${ name } (${ job.jobId })` )
+		logger[ level ]( `${ event } - ${ name } (${ job.jobId })` )
 	}
 
 	const queues = [
@@ -39,5 +39,5 @@ type Events = Array<keyof QueueEventsListener>
 		}
 	}
 
-	pino.info( 'Loki is ready!' )
+	logger.info( 'Loki is ready!' )
 } )()

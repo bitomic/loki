@@ -1,10 +1,10 @@
-import { env, pino } from '../lib'
+import { env, logger } from '../lib'
 import { CRPName } from '../producers'
 import type { Job } from 'bullmq'
 import { Octokit } from '@octokit/core'
 
 export default class {
-	protected readonly logger = pino.child( {
+	protected readonly logger = logger.child( {
 		worker: CRPName
 	} )
 	protected readonly username = 'bitomic'

@@ -1,11 +1,11 @@
-import { env, pino } from '../lib'
+import { env, logger } from '../lib'
 import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
 import type { Job } from 'bullmq'
 import { RaritiesName } from '../producers'
 
 export default class {
-	protected readonly logger = pino.child( {
+	protected readonly logger = logger.child( {
 		worker: RaritiesName
 	} )
 

@@ -1,3 +1,3 @@
 export * from './environment'
-export * from './pino'
+export * from './logger'
 export * from './redis'
