@@ -13,6 +13,9 @@
     "lint:fix": "eslint src/ --fix --ext .ts --cache",
     "start": "yarn node dist/main.js"
   },
+  "bin": {
+    "task": "dist/bin.js"
+  },
   "packageManager": "yarn@3.2.2",
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
