@@ -1,9 +1,10 @@
-import { env, logger } from '../lib'
-import { Fandom, type FandomWiki } from 'mw.js'
-import { format } from 'lua-json'
-import type { Job } from 'bullmq'
+import { Fandom } from 'mw.js'
+import type { FandomWiki } from 'mw.js'
+import { format } from 'path'
+import { HOUR } from '../../util'
+import type { JobsOptions } from 'bullmq'
 import { parse } from 'mwparser'
-import { PrefixesName } from '../producers'
+import { Task } from '../../framework'
 
 enum PageType {
 	Personaje = 'Personaje',
@@ -14,22 +15,30 @@ enum PageType {
 	Vestuario = 'Vestuario'
 }
 
-export default class {
-	protected readonly logger = logger.child( {
-		worker: PrefixesName
-	} )
+export class UserTask extends Task {
+	public override jobOptions: JobsOptions = {
+		repeat: {
+			every: HOUR
+		}
+	}
 
-	public async run( job: Pick<Job, 'name'> ): Promise<void> {
-		if ( job.name !== PrefixesName ) return
+	public async run(): Promise<void> {
+		const wiki = Fandom.getWiki( 'es.genshin-impact' )
+		const bot = await Task.getFandomBot( wiki )
+		const data = {
+			...await this.getPages( wiki ),
+			...await this.getArtifactPieces( wiki )
+		}
 
-		const fandom = new Fandom()
-		const wiki = fandom.getWiki( 'es.genshin-impact' )
-		const bot = await fandom.login( {
-			password: env.FANDOM_PASS,
-			username: env.FANDOM_USER,
-			wiki
+		this.logger.info( 'Updating prefixes...' )
+		await bot.edit( {
+			bot: true,
+			text: format( data ),
+			title: 'Module:Prefijo/datos'
 		} )
+	}
 
+	protected async getPages( wiki: FandomWiki ): Promise<Record<string, PageType>> {
 		const pageTypes: Array<[ string, PageType ]> = [
 			[ 'Arma', PageType.Arma ],
 			[ 'Artefacto', PageType.Artefacto ],
@@ -58,14 +67,8 @@ export default class {
 				transclusions
 			)
 		}
-		Object.assign( pages, await this.getArtifactPieces( wiki ) )
 
-		const lua = format( pages )
-		await bot.edit( {
-			bot: true,
-			text: lua,
-			title: 'Module:Prefijo/datos'
-		} )
+		return pages
 	}
 
 	protected async getArtifactPieces( wiki: FandomWiki ): Promise<Record<string, PageType>> {

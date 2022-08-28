@@ -1,42 +1,38 @@
-import './producers'
-import './workers'
-import { GithubEvents, GithubQueue, WikiEvents, WikiQueue } from './queues'
-import type { Queue, QueueEventsListener } from 'bullmq'
-import { logger } from './lib'
+import { logger, redis } from './lib'
+import { LokiEvents, LokiName, LokiQueue } from './queues'
+import path from 'path'
+import type { QueueEventsListener } from 'bullmq'
+import { TaskStore } from './framework/TaskStore'
+import { Worker } from 'bullmq'
 
-interface EventJob {
-	jobId: string
-	name: string
-}
+void ( async () => {
+	await LokiQueue.obliterate( { force: true } )
 
-type Events = Array<keyof QueueEventsListener>
+	const tasks = new TaskStore()
+	tasks.registerPath( path.resolve( __dirname, 'tasks' ) )
+	await tasks.loadAll()
 
-( () => {
-	const infoEvents: Events = [ 'active', 'added', 'completed', 'drained' ]
-	const warnEvents: Events = [ 'delayed', 'paused', 'removed' ]
-	const errorEvents: Events = [ 'error', 'failed' ]
+	new Worker( LokiName, async job => {
+		const { name } = job
+		logger.info( `Running: ${ name }` )
+		const task = tasks.get( name )
+		await task?.run()
+		logger.info( `Finished: ${ name }` )
+	}, { connection: redis } )
 
-	const log = async ( level: 'error' | 'info' | 'warn', event: string, job: EventJob, queue: Queue ): Promise<void> => {
-		const name = job.name || ( await queue.getJob( job.jobId ) )?.name || 'unknown'
-		logger[ level ]( `${ event } - ${ name } (${ job.jobId })` )
+	const log = async ( level: 'error' | 'info' | 'warn', event: string, job: EventJob ): Promise<void> => {
+		const name = job.name || ( await LokiQueue.getJob( job.jobId ) )?.name || 'unknown'
+		logger[ level ]( `${ event } - ${ name }` )
 	}
 
-	const queues = [
-		{ events: GithubEvents, queue: GithubQueue },
-		{ events: WikiEvents, queue: WikiQueue }
-	]
-	for ( const { events, queue } of queues ) {
-		for ( const event of infoEvents ) {
-			events.on( event, ( job: EventJob ): void => void log( 'info', event, job, queue ) )
-		}
-
-		for ( const event of warnEvents ) {
-			events.on( event, ( job: EventJob ): void => void log( 'warn', event, job, queue ) )
-		}
-
-		for ( const event of errorEvents ) {
-			events.on( event, ( job: EventJob ): void => void log( 'error', event, job, queue ) )
-		}
+	type Events = Array<keyof QueueEventsListener>
+	interface EventJob {
+		jobId: string
+		name: string
+	}
+	const errorEvents: Events = [ 'error', 'failed' ]
+	for ( const event of errorEvents ) {
+		LokiEvents.on( event, ( job: EventJob ): void => void log( 'error', event, job ) )
 	}
 
 	logger.info( 'Loki is ready!' )
