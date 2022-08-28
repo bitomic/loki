@@ -1,6 +1,6 @@
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
-import { format } from 'path'
+import { format } from 'lua-json'
 import { HOUR } from '../../util'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'mwparser'
