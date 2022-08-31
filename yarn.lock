@@ -3368,7 +3368,7 @@ __metadata:
     lua-json: ^1.0.0
     mw.js: ^2.4.1
     mwparser: ^1.3.3
-    node-html-parser: ^5.4.2-0
+    node-html-parser: ^5.4.2
     octokit: ^2.0.7
     rimraf: ^3.0.2
     ts-dotenv: ^0.8.3
@@ -3817,13 +3817,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-parser@npm:^5.4.2-0":
-  version: 5.4.2-0
-  resolution: "node-html-parser@npm:5.4.2-0"
+"node-html-parser@npm:^5.4.2":
+  version: 5.4.2
+  resolution: "node-html-parser@npm:5.4.2"
   dependencies:
     css-select: ^4.2.1
     he: 1.2.0
-  checksum: 00a5fe37db6755f5b8529e350f1db86b6071b412609a64681ea42b30a36d70d4d55b8d3f8d2f33dcee6ab7524f25f509a998ae7e5b90391da16908c076c3199b
+  checksum: 2d2391147c83b402786eeab95d23ea4e24ca8608e0e70a2823bfd4f2a248be13a8cc31acfd55a0109e051131e4f0c17d7ada8d999ce70ff2e342ab0110f5da59
   languageName: node
   linkType: hard
 
