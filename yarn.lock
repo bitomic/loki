@@ -1475,9 +1475,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bullmq@npm:^1.90.0":
-  version: 1.90.0
-  resolution: "bullmq@npm:1.90.0"
+"bullmq@npm:^1.90.1":
+  version: 1.90.1
+  resolution: "bullmq@npm:1.90.1"
   dependencies:
     cron-parser: ^4.6.0
     get-port: 6.1.2
@@ -1488,7 +1488,7 @@ __metadata:
     semver: ^7.3.7
     tslib: ^2.0.0
     uuid: ^8.3.2
-  checksum: d1659fe4d596a9f95dffcc0c084b8a8e76757f112c0b143ce1cdd0a6431cf18053581238956ea217ab2d0b0ed4b73439fc24f7ce944adbefa37d5b8fc36a9efd
+  checksum: 14e249db622bf50d918661e87bb5e6e4133becabaa3097e350b6cb5abebe81155613c43b60246036d12c020e9b7857a0c5724d64732631908c18a65d68cbd3b6
   languageName: node
   linkType: hard
 
@@ -3360,7 +3360,7 @@ __metadata:
     "@types/node": ^16.11.56
     "@typescript-eslint/eslint-plugin": ^5.36.1
     "@typescript-eslint/parser": ^5.36.1
-    bullmq: ^1.90.0
+    bullmq: ^1.90.1
     eslint: ^8.23.0
     husky: ^8.0.1
     ioredis: ^5.2.2
