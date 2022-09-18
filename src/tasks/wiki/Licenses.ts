@@ -26,7 +26,6 @@ interface IStatsLevel {
 }
 
 interface IAllStats {
-	speed: string | null
 	stats: Record<string, Partial<IStatsLevel>>
 }
 
@@ -41,17 +40,8 @@ export class UserTask extends Task {
 		const links = await this.getLinks()
 		if ( !links ) return
 
-		/*
-		const links = [
-			'https://www.serebii.net/pokemonunite/pokemon/venusaur.shtml',
-			'https://www.serebii.net/pokemonunite/pokemon/hoopa.shtml',
-			'https://www.serebii.net/pokemonunite/pokemon/aegislash.shtml'
-		]
-		*/
-
 		const data: {
 			[ key: string ]: IBasicData & {
-				speed: string | null
 				stats: Record<string, Partial<IStatsLevel>>
 			}
 		} = {}
@@ -59,7 +49,8 @@ export class UserTask extends Task {
 			const { body } = await request( link )
 			const parsed = parse( await body.text() )
 			const basicData = this.getBasicData( parsed )
-			const stats = this.getStats( parsed )
+			const stats = await this.getStats( basicData.at( 0 )?.name )
+
 			for ( let i = 0; i < basicData.length; i++ ) {
 				const basicDataItem = basicData[ i ]
 				const statsItem = stats[ i ]
@@ -92,7 +83,7 @@ export class UserTask extends Task {
 	protected getBasicData( parsed: HTMLElement ): IBasicData[] {
 		return parsed.querySelector( '.tab' )?.querySelectorAll( '.fooinfo' ) // the main table where the image is
 			.map( ( i, idx ) => {
-				const lastColumn = i.nextElementSibling.nextElementSibling.querySelectorAll( 'tr' ).map( i => i.querySelectorAll( 'td' ).pop() )
+				const lastColumn: Array<string | undefined> = i.nextElementSibling.nextElementSibling.querySelectorAll( 'tr' ).map( i => i.querySelectorAll( 'td' ).pop() )
 					.map( i => i?.innerText )
 				const [ difficulty, style, role, attackStyle ] = lastColumn
 				return {
@@ -107,33 +98,112 @@ export class UserTask extends Task {
 			} ) as IBasicData[]
 	}
 
-	protected getStats( parsed: HTMLElement ): IAllStats[] {
-		const statsTables = parsed.querySelectorAll( 'h2' ).filter( i => i.innerText.startsWith( 'Stats' ) )
-			.map( i => i.parentNode.parentNode.parentNode.querySelectorAll( 'tr' ) )
+	protected async getStats( name: string | undefined ): Promise<IAllStats[]> {
+		if ( !name ) return []
+
+		if ( name === 'Ninetales de Alola' ) name = 'ninetales'
+		else if ( name === 'Mr. Mime' ) name = 'mrmime'
+
+		const url = `https://www.pokexperto.net/index2.php?seccion=pokemonunite/${ name.toLowerCase() }`
+		const { body } = await request( url )
+
+		const parsed = parse( await body.text() )
+		const statsTable = parsed.querySelectorAll( 'th' ).find( i => i.innerText === 'Ataque Especial' )?.parentNode.parentNode.parentNode
+		const trs = statsTable?.querySelectorAll( 'tr' )
+		trs?.shift()
+
+		if ( !trs ) return []
+		else if ( name === 'Aegislash' ) return this.getAegislashStats( trs )
+		else if ( name === 'Hoopa' ) return this.getHoopaStats( trs )
+
+		const allStats: IAllStats = { stats: {} }
+		for ( const tr of trs ) {
+			const level = tr.querySelector( 'th' )?.innerText.match( /(\d+)/ )?.at( 0 )
+			if ( !level ) continue
+
+			allStats.stats[ level ] = this.getRowStats( tr )
+		}
+
+		return [ allStats ]
+	}
+
+	protected getRowStats( tr: HTMLElement ): Partial<IStatsLevel> {
+		const levelStats: Partial<IStatsLevel> = {}
+
+		const tds = tr.querySelectorAll( 'td' ).map( i => i.innerText )
+		const [ hp, attack, defense, specialAttack, specialDefense ] = tds
+		if ( hp ) levelStats.hp = hp
+		if ( attack ) levelStats.attack = attack
+		if ( defense ) levelStats.defense = defense
+		if ( specialAttack ) levelStats.specialAttack = specialAttack
+		if ( specialDefense ) levelStats.specialDefense = specialDefense
+
+		return levelStats
+	}
+
+	protected getMultipleRowsStats( trs: HTMLElement[], from: number, to: number ): Array<Partial<IStatsLevel>> {
+		const stats: Array<Partial<IStatsLevel>> = []
+		for ( let i = from; i <= to; i++ ) {
+			const tr = trs.at( i )
+			if ( !tr ) continue
+			stats.push( this.getRowStats( tr ) )
+		}
+		return stats
+	}
+
+	protected getAegislashStats( trs: HTMLElement[] ): IAllStats[] {
 		const allStats: IAllStats[] = []
 
-		for ( const statsTable of statsTables ) {
-			const stats: Record<string, Partial<IStatsLevel>> = {}
-			let speed: string | null = null
-			for ( const row of statsTable ) {
-				const tds = row.querySelectorAll( 'td.cen' )
-				if ( tds.length !== 7 ) continue
-				const [ level, hp, attack, defense, specialAttack, specialDefense, rowSpeed ] = tds.map( i => i.innerText )
-				const idx = level?.match( /\d+/ )?.at( 0 )
-				if ( !idx ) continue
-				const statsLevel = stats[ idx ] ?? {}
-				if ( hp && parseInt( hp, 10 ) ) statsLevel.hp = hp
-				if ( attack && parseInt( attack, 10 ) ) statsLevel.attack = attack
-				if ( defense && parseInt( defense, 10 ) ) statsLevel.defense = defense
-				if ( specialAttack && parseInt( specialAttack, 10 ) ) statsLevel.specialAttack = specialAttack
-				if ( specialDefense && parseInt( specialDefense, 10 ) ) statsLevel.specialDefense = specialDefense
-				if ( rowSpeed && parseInt( rowSpeed, 10 ) ) speed = rowSpeed
+		const baseStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 0, 5 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 1 }` ] = item
+			return list
+		}, baseStats )
 
-				stats[ idx ] ??= statsLevel
-			}
+		const shieldStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 7, 15 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 7 }` ] = item
+			return list
+		}, shieldStats )
 
-			allStats.push( { speed, stats } )
-		}
+		const bladeStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 17, 25 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 7 }` ] = item
+			return list
+		}, bladeStats )
+
+		allStats.push(
+			{ stats: { ...baseStats, ...bladeStats } },
+			{ stats: { ...baseStats, ...shieldStats } }
+		)
+		return allStats
+	}
+
+	protected getHoopaStats( trs: HTMLElement[] ): IAllStats[] {
+		const allStats: IAllStats[] = []
+
+		const baseStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 0, 7 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 1 }` ] = item
+			return list
+		}, baseStats )
+
+		const boundStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 9, 15 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 9 }` ] = item
+			return list
+		}, boundStats )
+
+		const unboundStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 17, 23 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 9 }` ] = item
+			return list
+		}, unboundStats )
+
+		allStats.push(
+			{ stats: { ...baseStats, ...boundStats } },
+			{ stats: { ...baseStats, ...unboundStats } }
+		)
 
 		return allStats
 	}
