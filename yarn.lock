@@ -3372,7 +3372,7 @@ __metadata:
     husky: ^8.0.1
     ioredis: ^5.2.2
     lint-staged: ^13.0.3
-    lua-json: ^1.0.0
+    lua-json: ^1.0.1
     mw.js: ^2.4.1
     mwparser: ^1.3.3
     node-html-parser: ^5.4.2
@@ -3403,13 +3403,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lua-json@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "lua-json@npm:1.0.0"
+"lua-json@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "lua-json@npm:1.0.1"
   dependencies:
     lodash: ^4.17.11
     luaparse: ^0.2.1
-  checksum: 0cd0ec9b39e1147dd7fa23c1d75aaebaee0d2106e663834e75422aec1bf218d79beda9204f50fc3b6b9f0e7f68d9e31ba1d99588613bad7f659575c562af48a1
+  checksum: ebe33a4f3cabe383f9961468e1531ae82b15b6cd64fcdce816d0d9939a9d4c7d9e2e8cf35c32cc40bf98894c64ba43038d1288ced18047672c6998fec8ebdf9e
   languageName: node
   linkType: hard
 
