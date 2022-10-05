@@ -16,7 +16,7 @@
   "bin": {
     "task": "dist/bin.js"
   },
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@3.2.4",
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
     "@commitlint/cli": "^17.1.2",
