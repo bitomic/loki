@@ -81,7 +81,7 @@ export class UserTask extends Task {
 	}
 
 	protected getBasicData( parsed: HTMLElement ): IBasicData[] {
-		return parsed.querySelector( '.tab' )?.querySelectorAll( '.fooinfo' ) // the main table where the image is
+		const result = parsed.querySelector( '.tab' )?.querySelectorAll( '.fooinfo' ) // the main table where the image is
 			.map( ( i, idx ) => {
 				const lastColumn: Array<string | undefined> = i.nextElementSibling.nextElementSibling.querySelectorAll( 'tr' ).map( i => i.querySelectorAll( 'td' ).pop() )
 					.map( i => i?.innerText )
@@ -96,6 +96,15 @@ export class UserTask extends Task {
 					style: this.normalizeStyle( style )
 				}
 			} ) as IBasicData[]
+
+		if ( result[ 0 ]?.name === 'Scizor' ) {
+			result.push( {
+				...result[ 0 ],
+				name: 'Scyther'
+			} )
+		}
+
+		return result
 	}
 
 	protected async getStats( name: string | undefined ): Promise<IAllStats[]> {
@@ -115,6 +124,7 @@ export class UserTask extends Task {
 		if ( !trs ) return []
 		else if ( name === 'Aegislash' ) return this.getAegislashStats( trs )
 		else if ( name === 'Hoopa' ) return this.getHoopaStats( trs )
+		else if ( name === 'Scizor' ) return this.getScizorStats( trs )
 
 		const allStats: IAllStats = { stats: {} }
 		for ( const tr of trs ) {
@@ -197,6 +207,35 @@ export class UserTask extends Task {
 		const unboundStats: IAllStats[ 'stats' ] = {}
 		this.getMultipleRowsStats( trs, 17, 23 ).reduce( ( list, item, index ) => {
 			list[ `${ index + 9 }` ] = item
+			return list
+		}, unboundStats )
+
+		allStats.push(
+			{ stats: { ...baseStats, ...boundStats } },
+			{ stats: { ...baseStats, ...unboundStats } }
+		)
+
+		return allStats
+	}
+
+	protected getScizorStats( trs: HTMLElement[] ): IAllStats[] {
+		const allStats: IAllStats[] = []
+
+		const baseStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 0, 3 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 1 }` ] = item
+			return list
+		}, baseStats )
+
+		const boundStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 5, 15 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 5 }` ] = item
+			return list
+		}, boundStats )
+
+		const unboundStats: IAllStats[ 'stats' ] = {}
+		this.getMultipleRowsStats( trs, 17, 27 ).reduce( ( list, item, index ) => {
+			list[ `${ index + 5 }` ] = item
 			return list
 		}, unboundStats )
 
