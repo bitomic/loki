@@ -3386,7 +3386,7 @@ __metadata:
     mw.js: ^2.4.1
     mwparser: ^1.3.3
     node-html-parser: ^5.4.2
-    octokit: ^2.0.7
+    octokit: ^2.0.8
     rimraf: ^3.0.2
     ts-dotenv: ^0.8.3
     typescript: ^4.8.4
@@ -3932,9 +3932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"octokit@npm:^2.0.7":
-  version: 2.0.7
-  resolution: "octokit@npm:2.0.7"
+"octokit@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "octokit@npm:2.0.8"
   dependencies:
     "@octokit/app": ^13.0.5
     "@octokit/core": ^4.0.4
@@ -3943,8 +3943,8 @@ __metadata:
     "@octokit/plugin-rest-endpoint-methods": ^6.0.0
     "@octokit/plugin-retry": ^3.0.9
     "@octokit/plugin-throttling": ^4.0.1
-    "@octokit/types": ^7.0.0
-  checksum: 26eeba2b3d0614db4147980f6a9acb2a595f3ea6d78e9db5ef485b2c1b4606724e8a0b4c342a9f264903242ada5c329ee82eccb3fd8df822dff1944aa5bf20db
+    "@octokit/types": ^8.0.0
+  checksum: 5cc7840847e01f78443566bd06f9a0b49f48b586be1b18c473c9c00d6ce55b74ac9a5522e249b88089db3cebf78655333b450ab5fe284b01c3185709c9a8134d
   languageName: node
   linkType: hard
 
