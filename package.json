@@ -37,7 +37,7 @@
     "@octokit/core": "^4.1.0",
     "@octokit/request": "^6.2.2",
     "@sapphire/pieces": "^3.5.2",
-    "bullmq": "^1.91.1",
+    "bullmq": "^2.4.0",
     "ioredis": "^5.2.2",
     "lua-json": "^1.0.1",
     "mw.js": "^2.4.1",

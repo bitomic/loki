@@ -1476,12 +1476,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bullmq@npm:^1.91.1":
-  version: 1.91.1
-  resolution: "bullmq@npm:1.91.1"
+"bullmq@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "bullmq@npm:2.4.0"
   dependencies:
     cron-parser: ^4.6.0
-    get-port: 6.1.2
     glob: ^8.0.3
     ioredis: ^5.2.2
     lodash: ^4.17.21
@@ -1489,7 +1488,7 @@ __metadata:
     semver: ^7.3.7
     tslib: ^2.0.0
     uuid: ^9.0.0
-  checksum: b433c4c69bde4f9dec8cf8e188bddfda33ae4f430ed3e58beb0bf233c9361e8380b99926fa38f355dd042449a7b4aa1e85c46441e0a9f905df30c81cab4be7c1
+  checksum: 4c80d6bd0474652f296ddc8488698003e17923fe28776c12e327c639985bda9fddb26c43bdf96e5237b04b0f66bceee3c9f4db410264fc8a24d2d78d93cea8aa
   languageName: node
   linkType: hard
 
@@ -2517,13 +2516,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-port@npm:6.1.2":
-  version: 6.1.2
-  resolution: "get-port@npm:6.1.2"
-  checksum: e3c3d591492a11393455ef220f24c812a28f7da56ec3e4a2512d931a1f196d42850b50ac6138349a44622eda6dc3c0ccd8495cd91376d968e2d9e6f6f849e0a9
-  languageName: node
-  linkType: hard
-
 "get-stream@npm:^6.0.0, get-stream@npm:^6.0.1":
   version: 6.0.1
   resolution: "get-stream@npm:6.0.1"
@@ -3377,7 +3369,7 @@ __metadata:
     "@types/node": ^16.18.0
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
-    bullmq: ^1.91.1
+    bullmq: ^2.4.0
     eslint: ^8.26.0
     husky: ^8.0.1
     ioredis: ^5.2.2
