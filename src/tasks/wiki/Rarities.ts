@@ -15,8 +15,17 @@ export class UserTask extends Task {
 	public async run(): Promise<void> {
 		const wiki = Fandom.getWiki( 'es.genshin-impact' )
 		const bot = await Task.getFandomBot( wiki )
-		const pages = await this.getPages( wiki )
-		const rarities = await this.getRarities( wiki, pages )
+		const itemTypes = [ 'Armas', 'Comidas', 'Objetos', 'Personajes' ]
+		const rarities: Record<string, number> = {}
+		for ( const itemType of itemTypes ) {
+			for ( let i = 1; i <= 5; i++ ) {
+				const category = `${ itemType } de ${ i } estrella${ i === 1 ? '' : 's' }`
+				const pages = await this.getPagesInCategory( wiki, category )
+				for ( const page of pages ) {
+					rarities[ page ] = i
+				}
+			}
+		}
 
 		this.logger.info( 'Updating rarities...' )
 		await bot.edit( {
@@ -26,25 +35,12 @@ export class UserTask extends Task {
 		} )
 	}
 
-	protected async getPages( wiki: FandomWiki ): Promise<string[]> {
-		return ( await wiki.queryProp( {
-			prop: 'transcludedin',
-			tilimit: 'max',
-			tinamespace: 0,
-			tishow: '!redirect',
-			titles: [ 'Plantilla:Infobox Objeto', 'Plantilla:Infobox Personaje jugable', 'Plantilla:Infobox Arma', 'Plantilla:Infobox Comida' ]
-		} ) ).map( i => i.transcludedin?.map( i => i.title ) ).flat() // eslint-disable-line
-	}
-
-	protected async getRarities( wiki: FandomWiki, pages: string[] ): Promise<Record<string, number>> {
-		const rarities: Record<string, number> = {}
-		for await ( const page of wiki.iterPages( pages ) ) {
-			if ( page.missing ) continue
-			const { content } = page.revisions[ 0 ].slots.main
-			const rarity = content.match( / *rareza *= *(\d)/ )
-			if ( !rarity?.[ 1 ] ) continue
-			rarities[ page.title ] = parseInt( rarity[ 1 ], 10 )
-		}
-		return rarities
+	protected async getPagesInCategory( wiki: FandomWiki, category: string ): Promise<string[]> {
+		return ( await wiki.queryList( {
+			cmlimit: 'max',
+			cmnamespace: 0,
+			cmtitle: `Category:${ category }`,
+			list: 'categorymembers'
+		} ) ).map( i => i.title )
 	}
 }
