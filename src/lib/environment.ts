@@ -13,5 +13,6 @@ export const env = load( {
 	REDIS_PORT: {
 		default: 6379,
 		type: Number
-	}
+	},
+	REDIS_USER: String
 } )
