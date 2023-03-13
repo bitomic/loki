@@ -5,5 +5,6 @@ export const redis = new IORedis( {
 	host: env.REDIS_HOST,
 	maxRetriesPerRequest: null,
 	password: env.REDIS_PASS,
-	port: env.REDIS_PORT
+	port: env.REDIS_PORT,
+	username: env.REDIS_USER
 } )
