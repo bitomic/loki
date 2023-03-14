@@ -45,7 +45,7 @@
     "node-html-parser": "^5.4.2",
     "octokit": "^2.0.14",
     "ts-dotenv": "^0.9.1",
-    "undici": "^5.20.0",
+    "undici": "^5.21.0",
     "winston": "^3.8.2"
   },
   "publishConfig": {
