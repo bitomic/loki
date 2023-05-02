@@ -895,43 +895,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "@sapphire/decorators@npm:6.0.1"
-  dependencies:
-    tslib: ^2.5.0
-  checksum: 348891a24f572eba80e805c30fb517987bf8cdf13318e2f1b0584f61e6fe10027593c0123fe5eff37a815d3a9fefab26c926b73c29a6b672faf9f074ef6b4044
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord-utilities@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@sapphire/discord-utilities@npm:3.0.3"
-  dependencies:
-    discord-api-types: ^0.37.41
-  checksum: 37cc5f206bb5b1b19249f8aa034432e29ac123862442f42e3ec8f9e145219813cde682380530adde1138efdefbfcf3c0d04c1bf730c97dc22b853cd17908104c
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord.js-utilities@npm:*":
-  version: 6.0.7
-  resolution: "@sapphire/discord.js-utilities@npm:6.0.7"
-  dependencies:
-    "@sapphire/discord-utilities": ^3.0.3
-    "@sapphire/duration": ^1.1.0
-    "@sapphire/utilities": ^3.11.1
-    tslib: ^2.5.0
-  checksum: c74d41057caeb66b8c832f783d5a81bbacdefab79c47196f4bf76c4fecf38d5ad4d85b5c55298d153316153343224eb696eb800753413ad49b40a8fc206a747e
-  languageName: node
-  linkType: hard
-
-"@sapphire/duration@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@sapphire/duration@npm:1.1.0"
-  checksum: bf145249804560e20621fb593110dc4084a7597f04669695250921ccc7ca2e867a1f0a914c3fdfc9d120ee13689668a104b86861f312ffcce293e9551f4359c9
-  languageName: node
-  linkType: hard
-
 "@sapphire/pieces@npm:^3.6.3":
   version: 3.6.3
   resolution: "@sapphire/pieces@npm:3.6.3"
@@ -2053,13 +2016,6 @@ __metadata:
   dependencies:
     path-type: ^4.0.0
   checksum: fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
-  languageName: node
-  linkType: hard
-
-"discord-api-types@npm:^0.37.41":
-  version: 0.37.41
-  resolution: "discord-api-types@npm:0.37.41"
-  checksum: e8a2dd28afefe30e20652aa8eac3e15b596e7274740ea54088b3713c2a22f9bc883138d8501fa4defe3c45e895aa87fc580b0ef110a9c9ab8609c67e870948ed
   languageName: node
   linkType: hard
 
@@ -3467,7 +3423,6 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.1
     "@octokit/core": ^4.2.0
     "@octokit/request": ^6.2.3
-    "@sapphire/decorators": ^6.0.1
     "@sapphire/pieces": ^3.6.3
     "@types/lua-json": ^1.0.1
     "@types/node": ^18.16.3

@@ -1,11 +1,10 @@
-import { ApplyOptions } from '@sapphire/decorators'
+import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import { HOUR } from '../../util'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'mwparser'
-import type { PieceOptions } from '@sapphire/pieces'
 import { Task } from '../../framework'
 
 enum PageType {
@@ -17,14 +16,18 @@ enum PageType {
 	Vestuario = 'Vestuario'
 }
 
-@ApplyOptions<PieceOptions>( {
-	name: 'es.genshin-impact/prefixes'
-} )
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: HOUR
 		}
+	}
+
+	public constructor( context: PieceContext, options: PieceOptions ) {
+		super( context, {
+			...options,
+			name: 'es.genshin-impact/prefixes'
+		} )
 	}
 
 	public async run(): Promise<void> {

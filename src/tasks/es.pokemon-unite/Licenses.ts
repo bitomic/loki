@@ -1,11 +1,10 @@
-import { ApplyOptions } from '@sapphire/decorators'
+import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
 import { HOUR } from '../../util'
 import type { HTMLElement } from 'node-html-parser'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'node-html-parser'
-import type { PieceOptions } from '@sapphire/pieces'
 import { request } from 'undici'
 import { Task } from '../../framework'
 
@@ -31,14 +30,18 @@ interface IAllStats {
 	stats: Record<string, Partial<IStatsLevel>>
 }
 
-@ApplyOptions<PieceOptions>( {
-	name: 'es.pokemon-unite/licenses'
-} )
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: HOUR * 24
 		}
+	}
+
+	public constructor( context: PieceContext, options: PieceOptions ) {
+		super( context, {
+			...options,
+			name: 'es.pokemon-unite/licenses'
+		} )
 	}
 
 	public async run(): Promise<void> {

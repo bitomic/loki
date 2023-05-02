@@ -1,11 +1,10 @@
 import { NamedParameter, parse } from 'mwparser'
-import { ApplyOptions } from '@sapphire/decorators'
+import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import { HOUR } from '../../util'
 import type { JobsOptions } from 'bullmq'
-import type { PieceOptions } from '@sapphire/pieces'
 import { Task } from '../../framework'
 import type { Template } from 'mwparser'
 
@@ -13,14 +12,18 @@ type BannerData = Record<string, string | Record<string, boolean>> & {
 	inicio: string
 }
 
-@ApplyOptions<PieceOptions>( {
-	name: 'es.genshin-impact/banners'
-} )
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: HOUR
 		}
+	}
+
+	public constructor( context: PieceContext, options: PieceOptions ) {
+		super( context, {
+			...options,
+			name: 'es.genshin-impact/banners'
+		} )
 	}
 
 	public async run(): Promise<void> {
