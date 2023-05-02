@@ -895,6 +895,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/decorators@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@sapphire/decorators@npm:6.0.1"
+  dependencies:
+    tslib: ^2.5.0
+  checksum: 348891a24f572eba80e805c30fb517987bf8cdf13318e2f1b0584f61e6fe10027593c0123fe5eff37a815d3a9fefab26c926b73c29a6b672faf9f074ef6b4044
+  languageName: node
+  linkType: hard
+
 "@sapphire/pieces@npm:^3.6.3":
   version: 3.6.3
   resolution: "@sapphire/pieces@npm:3.6.3"
@@ -3423,6 +3432,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.1
     "@octokit/core": ^4.2.0
     "@octokit/request": ^6.2.3
+    "@sapphire/decorators": ^6.0.1
     "@sapphire/pieces": ^3.6.3
     "@types/lua-json": ^1.0.1
     "@types/node": ^18.16.3
