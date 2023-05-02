@@ -1,9 +1,11 @@
+import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
 import { HOUR } from '../../util'
 import type { HTMLElement } from 'node-html-parser'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'node-html-parser'
+import type { PieceOptions } from '@sapphire/pieces'
 import { request } from 'undici'
 import { Task } from '../../framework'
 
@@ -29,6 +31,9 @@ interface IAllStats {
 	stats: Record<string, Partial<IStatsLevel>>
 }
 
+@ApplyOptions<PieceOptions>( {
+	name: 'es.pokemon-unite/licenses'
+} )
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
