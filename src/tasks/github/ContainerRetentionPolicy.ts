@@ -1,13 +1,13 @@
 import { env } from '../../lib'
-import { HOUR } from '../../util'
 import type { JobsOptions } from 'bullmq'
 import { Octokit } from '@octokit/core'
 import { Task } from '../../framework'
+import { Time } from '@sapphire/duration'
 
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
-			every: HOUR * 24
+			every: Time.Day
 		}
 	}
 

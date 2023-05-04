@@ -1,11 +1,11 @@
 import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
-import { HOUR } from '../../util'
 import type { HTMLElement } from 'node-html-parser'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'node-html-parser'
 import { request } from 'undici'
 import { Task } from '../../framework'
+import { Time } from '@sapphire/duration'
 
 interface IBasicData {
 	attackStyle: string
@@ -32,7 +32,7 @@ interface IAllStats {
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
-			every: HOUR * 24
+			every: Time.Day
 		}
 	}
 

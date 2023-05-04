@@ -1,14 +1,14 @@
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
-import { HOUR } from '../../util'
 import type { JobsOptions } from 'bullmq'
 import { Task } from '../../framework'
+import { Time } from '@sapphire/duration'
 
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
 		repeat: {
-			every: HOUR
+			every: Time.Hour
 		}
 	}
 
