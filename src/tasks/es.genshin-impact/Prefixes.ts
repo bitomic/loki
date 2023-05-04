@@ -1,9 +1,9 @@
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'mwparser'
-import { Task } from '../../framework'
 import { Time } from '@sapphire/duration'
 import type { Wiki } from '@quority/fandom'
+import { WikiTask } from '../../framework'
 
 enum PageType {
 	Personaje = 'Personaje',
@@ -14,7 +14,7 @@ enum PageType {
 	Vestuario = 'Vestuario'
 }
 
-export class UserTask extends Task {
+export class UserTask extends WikiTask {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: Time.Hour
@@ -49,21 +49,15 @@ export class UserTask extends Task {
 
 		const pages: Record<string, PageType> = {}
 		for ( const [ infobox, type ] of pageTypes ) {
-			const transclusions = ( await wiki.queryProp( {
-				prop: 'transcludedin',
-				tilimit: 'max',
-				tinamespace: 0,
-				tishow: '!redirect',
-				titles: `Plantilla:Infobox ${ infobox }`
-			} ) ).map( i => i.transcludedin?.map( i => i.title ) ).flat() // eslint-disable-line
-				.reduce( ( list, item ) => {
-					list[ item ] = type
-					return list
-				}, {} as Record<string, PageType> )
+			const transclusions = await this.getTransclusions( wiki, `Infobox ${ infobox }` )
+			const types = transclusions.reduce( ( list, item ) => {
+				list[ item ] = type
+				return list
+			}, {} as Record<string, PageType> )
 
 			Object.assign(
 				pages,
-				transclusions
+				types
 			)
 		}
 

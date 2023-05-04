@@ -1,10 +1,9 @@
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
-import { Task } from '../../framework'
 import { Time } from '@sapphire/duration'
-import type { Wiki } from '@quority/fandom'
+import { WikiTask } from '../../framework'
 
-export class UserTask extends Task {
+export class UserTask extends WikiTask {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: Time.Hour
@@ -32,14 +31,5 @@ export class UserTask extends Task {
 			text: format( rarities ),
 			title: 'Module:Rarezas'
 		} )
-	}
-
-	protected async getPagesInCategory( wiki: Wiki, category: string ): Promise<string[]> {
-		return ( await wiki.queryList( {
-			cmlimit: 'max',
-			cmnamespace: 0,
-			cmtitle: `Category:${ category }`,
-			list: 'categorymembers'
-		} ) ).map( i => i.title )
 	}
 }

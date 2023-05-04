@@ -1,16 +1,15 @@
 import { NamedParameter, parse } from 'mwparser'
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
-import { Task } from '../../framework'
 import type { Template } from 'mwparser'
 import { Time } from '@sapphire/duration'
-import type { Wiki } from '@quority/fandom'
+import { WikiTask } from '../../framework'
 
 type BannerData = Record<string, string | Record<string, boolean>> & {
 	inicio: string
 }
 
-export class UserTask extends Task {
+export class UserTask extends WikiTask {
 	public override jobOptions: JobsOptions = {
 		repeat: {
 			every: Time.Hour
@@ -19,7 +18,7 @@ export class UserTask extends Task {
 
 	public async run(): Promise<void> {
 		const wiki = UserTask.getFandomWiki( 'es.genshin-impact' )
-		const pages = await this.getPages( wiki )
+		const pages = await this.getPagesInCategory( wiki, 'Banners' )
 		const data: Record<string, BannerData> = {}
 
 		for await ( const page of wiki.iterPages( pages ) ) {
@@ -53,14 +52,5 @@ export class UserTask extends Task {
 				}, {} as Record<string, boolean> )
 		}
 		return data
-	}
-
-	protected async getPages( wiki: Wiki ): Promise<string[]> {
-		return ( await wiki.queryList( {
-			cmlimit: 'max',
-			cmnamespace: 0,
-			cmtitle: 'Category:Banners',
-			list: 'categorymembers'
-		} ) ).map( i => i.title )
 	}
 }
