@@ -895,6 +895,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/duration@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@sapphire/duration@npm:1.1.0"
+  checksum: bf145249804560e20621fb593110dc4084a7597f04669695250921ccc7ca2e867a1f0a914c3fdfc9d120ee13689668a104b86861f312ffcce293e9551f4359c9
+  languageName: node
+  linkType: hard
+
 "@sapphire/pieces@npm:^3.6.3":
   version: 3.6.3
   resolution: "@sapphire/pieces@npm:3.6.3"
@@ -3423,6 +3430,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.1
     "@octokit/core": ^4.2.0
     "@octokit/request": ^6.2.3
+    "@sapphire/duration": ^1.1.0
     "@sapphire/pieces": ^3.6.3
     "@types/lua-json": ^1.0.1
     "@types/node": ^18.16.3
