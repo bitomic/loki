@@ -1,4 +1,3 @@
-import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
@@ -11,13 +10,6 @@ export class UserTask extends Task {
 		repeat: {
 			every: HOUR
 		}
-	}
-
-	public constructor( context: PieceContext, options: PieceOptions ) {
-		super( context, {
-			...options,
-			name: 'es.genshin-impact/rarities'
-		} )
 	}
 
 	public async run(): Promise<void> {

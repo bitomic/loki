@@ -1,4 +1,3 @@
-import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
 import { HOUR } from '../../util'
@@ -35,13 +34,6 @@ export class UserTask extends Task {
 		repeat: {
 			every: HOUR * 24
 		}
-	}
-
-	public constructor( context: PieceContext, options: PieceOptions ) {
-		super( context, {
-			...options,
-			name: 'es.pokemon-unite/licenses'
-		} )
 	}
 
 	public async run(): Promise<void> {

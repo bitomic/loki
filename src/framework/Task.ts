@@ -4,10 +4,12 @@ import { Fandom } from 'mw.js'
 import type { JobsOptions } from 'bullmq'
 import { LokiQueue } from '../queues'
 import { Piece } from '@sapphire/pieces'
+import { randomUUID } from 'crypto'
 
 export abstract class Task extends Piece {
 	public jobOptions: JobsOptions | null = null
 	#logger: typeof logger | null = null
+	public override name = randomUUID()
 
 	protected get logger(): typeof logger {
 		if ( !this.#logger ) this.#logger = logger.child( { label: this.name } )
