@@ -1,4 +1,3 @@
-import { Fandom } from 'mw.js'
 import { format } from 'lua-json'
 import type { HTMLElement } from 'node-html-parser'
 import type { JobsOptions } from 'bullmq'
@@ -71,8 +70,8 @@ export class UserTask extends Task {
 		// @ts-expect-error - ignore
 		for ( const key of keys ) sortedData[ key ] = data[ key ]
 
-		const wiki = Fandom.getWiki( 'es.pokemon-unite' )
-		const bot = await UserTask.getFandomBot( wiki )
+		const wiki = UserTask.getFandomWiki( 'es.pokemon-unite' )
+		const bot = await UserTask.getBot( wiki )
 		await bot.edit( {
 			bot: true,
 			text: format( sortedData ),

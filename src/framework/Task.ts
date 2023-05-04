@@ -1,6 +1,6 @@
+import type { Bot, Wiki } from '@quority/core'
 import { env, logger } from '../lib'
-import type { FandomBot, FandomWiki } from 'mw.js'
-import { Fandom } from 'mw.js'
+import { Wiki as FandomWiki } from '@quority/fandom'
 import type { JobsOptions } from 'bullmq'
 import { LokiQueue } from '../queues'
 import { Piece } from '@sapphire/pieces'
@@ -18,12 +18,13 @@ export abstract class Task extends Piece {
 
 	public abstract run(): void | Promise<void>
 
-	protected static getFandomBot( wiki: FandomWiki ): Promise<FandomBot> {
-		const fandom = new Fandom()
-		return fandom.login( {
-			password: env.FANDOM_PASS,
-			username: env.FANDOM_USER,
-			wiki
+	protected static getBot( wiki: Wiki ): Promise<Bot> {
+		return wiki.login( env.FANDOM_USER, env.FANDOM_PASS )
+	}
+
+	protected static getFandomWiki( interwiki: string ): FandomWiki {
+		return new FandomWiki( {
+			api: interwiki
 		} )
 	}
 

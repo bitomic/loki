@@ -1,11 +1,10 @@
 import { NamedParameter, parse } from 'mwparser'
-import { Fandom } from 'mw.js'
-import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
 import { Task } from '../../framework'
 import type { Template } from 'mwparser'
 import { Time } from '@sapphire/duration'
+import type { Wiki } from '@quority/fandom'
 
 type BannerData = Record<string, string | Record<string, boolean>> & {
 	inicio: string
@@ -19,7 +18,7 @@ export class UserTask extends Task {
 	}
 
 	public async run(): Promise<void> {
-		const wiki = Fandom.getWiki( 'es.genshin-impact' )
+		const wiki = UserTask.getFandomWiki( 'es.genshin-impact' )
 		const pages = await this.getPages( wiki )
 		const data: Record<string, BannerData> = {}
 
@@ -32,7 +31,7 @@ export class UserTask extends Task {
 			data[ page.title ] = this.getData( template, infobox )
 		}
 
-		const bot = await UserTask.getFandomBot( wiki )
+		const bot = await UserTask.getBot( wiki )
 		await bot.edit( {
 			bot: true,
 			text: format( data ),
@@ -56,7 +55,7 @@ export class UserTask extends Task {
 		return data
 	}
 
-	protected async getPages( wiki: FandomWiki ): Promise<string[]> {
+	protected async getPages( wiki: Wiki ): Promise<string[]> {
 		return ( await wiki.queryList( {
 			cmlimit: 'max',
 			cmnamespace: 0,

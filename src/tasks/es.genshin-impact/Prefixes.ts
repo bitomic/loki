@@ -1,10 +1,9 @@
-import { Fandom } from 'mw.js'
-import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
 import { parse } from 'mwparser'
 import { Task } from '../../framework'
 import { Time } from '@sapphire/duration'
+import type { Wiki } from '@quority/fandom'
 
 enum PageType {
 	Personaje = 'Personaje',
@@ -23,8 +22,8 @@ export class UserTask extends Task {
 	}
 
 	public async run(): Promise<void> {
-		const wiki = Fandom.getWiki( 'es.genshin-impact' )
-		const bot = await Task.getFandomBot( wiki )
+		const wiki = UserTask.getFandomWiki( 'es.genshin-impact' )
+		const bot = await UserTask.getBot( wiki )
 		const data = {
 			...await this.getPages( wiki ),
 			...await this.getArtifactPieces( wiki )
@@ -38,7 +37,7 @@ export class UserTask extends Task {
 		} )
 	}
 
-	protected async getPages( wiki: FandomWiki ): Promise<Record<string, PageType>> {
+	protected async getPages( wiki: Wiki ): Promise<Record<string, PageType>> {
 		const pageTypes: Array<[ string, PageType ]> = [
 			[ 'Arma', PageType.Arma ],
 			[ 'Artefacto', PageType.Artefacto ],
@@ -71,7 +70,7 @@ export class UserTask extends Task {
 		return pages
 	}
 
-	protected async getArtifactPieces( wiki: FandomWiki ): Promise<Record<string, PageType>> {
+	protected async getArtifactPieces( wiki: Wiki ): Promise<Record<string, PageType>> {
 		const pages = ( await wiki.queryProp( {
 			prop: 'transcludedin',
 			tilimit: 'max',

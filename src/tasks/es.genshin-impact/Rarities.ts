@@ -1,9 +1,8 @@
-import { Fandom } from 'mw.js'
-import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import type { JobsOptions } from 'bullmq'
 import { Task } from '../../framework'
 import { Time } from '@sapphire/duration'
+import type { Wiki } from '@quority/fandom'
 
 export class UserTask extends Task {
 	public override jobOptions: JobsOptions = {
@@ -13,8 +12,8 @@ export class UserTask extends Task {
 	}
 
 	public async run(): Promise<void> {
-		const wiki = Fandom.getWiki( 'es.genshin-impact' )
-		const bot = await Task.getFandomBot( wiki )
+		const wiki = UserTask.getFandomWiki( 'es.genshin-impact' )
+		const bot = await UserTask.getBot( wiki )
 		const itemTypes = [ 'Armas', 'Comidas', 'Objetos', 'Personajes' ]
 		const rarities: Record<string, number> = {}
 		for ( const itemType of itemTypes ) {
@@ -35,7 +34,7 @@ export class UserTask extends Task {
 		} )
 	}
 
-	protected async getPagesInCategory( wiki: FandomWiki, category: string ): Promise<string[]> {
+	protected async getPagesInCategory( wiki: Wiki, category: string ): Promise<string[]> {
 		return ( await wiki.queryList( {
 			cmlimit: 'max',
 			cmnamespace: 0,
