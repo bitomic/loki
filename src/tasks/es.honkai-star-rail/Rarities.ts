@@ -13,7 +13,7 @@ export class UserTask extends WikiTask {
 	public async run(): Promise<void> {
 		const wiki = UserTask.getFandomWiki( 'es.honkai-star-rail' )
 		const bot = await UserTask.getBot( wiki )
-		const itemTypes = [ 'Personajes', 'Recursos' ]
+		const itemTypes = [ 'Personajes', 'Recursos', 'Conos de luz' ]
 		const rarities: Record<string, number> = {}
 		for ( const itemType of itemTypes ) {
 			for ( let i = 1; i <= 5; i++ ) {
