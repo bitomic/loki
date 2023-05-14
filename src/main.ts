@@ -1,3 +1,4 @@
+import 'newrelic'
 import { logger, redis } from './lib'
 import { LokiEvents, LokiName, LokiQueue } from './queues'
 import path from 'path'
