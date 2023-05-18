@@ -961,9 +961,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/request@npm:^6.2.4":
-  version: 6.2.4
-  resolution: "@octokit/request@npm:6.2.4"
+"@octokit/request@npm:^6.2.5":
+  version: 6.2.5
+  resolution: "@octokit/request@npm:6.2.5"
   dependencies:
     "@octokit/endpoint": ^7.0.0
     "@octokit/request-error": ^3.0.0
@@ -971,7 +971,7 @@ __metadata:
     is-plain-object: ^5.0.0
     node-fetch: ^2.6.7
     universal-user-agent: ^6.0.0
-  checksum: c498594cc7aef2321d43d52e503b73136983215ebaad80105e7774befd26d362650a07f4f25f0185b143613c4c1269a724a10d7e3cae09b2b1b177b976ee66fd
+  checksum: 856451ea8cc6b1dd0f6e350a141e65c318b5e3a25b8dea373d3afd115f9a3077535a0330f5d90e9db81dc3234dba1dd64edd31e68f639553baa10b4d02b99498
   languageName: node
   linkType: hard
 
@@ -3769,7 +3769,7 @@ __metadata:
     "@commitlint/cli": ^17.6.3
     "@commitlint/config-conventional": ^17.6.3
     "@octokit/core": ^4.2.1
-    "@octokit/request": ^6.2.4
+    "@octokit/request": ^6.2.5
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
     "@sapphire/duration": ^1.1.0
