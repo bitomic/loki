@@ -34,7 +34,7 @@
   "dependencies": {
     "@bitomic/logger": "^1.0.0",
     "@bitomic/utilities": "^1.0.0",
-    "@octokit/core": "^4.2.0",
+    "@octokit/core": "^4.2.1",
     "@octokit/request": "^6.2.4",
     "@quority/core": "^4.0.4",
     "@quority/fandom": "^4.0.9",
