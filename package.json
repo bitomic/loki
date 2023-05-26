@@ -49,7 +49,7 @@
     "octokit": "^2.0.18",
     "ts-dotenv": "^0.9.1",
     "undici": "^5.22.1",
-    "winston": "^3.8.2"
+    "winston": "^3.9.0"
   },
   "publishConfig": {
     "access": "public"
