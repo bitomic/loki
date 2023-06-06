@@ -3643,7 +3643,7 @@ __metadata:
     lint-staged: ^13.2.2
     lua-json: ^1.0.1
     mwparser: ^1.3.3
-    newrelic: ^10.1.2
+    newrelic: ^10.2.0
     node-html-parser: ^5.4.2
     octokit: ^2.0.19
     rimraf: ^5.0.1
@@ -4072,9 +4072,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"newrelic@npm:^10.1.2":
-  version: 10.1.2
-  resolution: "newrelic@npm:10.1.2"
+"newrelic@npm:^10.2.0":
+  version: 10.2.0
+  resolution: "newrelic@npm:10.2.0"
   dependencies:
     "@contrast/fn-inspect": ^3.3.0
     "@grpc/grpc-js": ^1.8.10
@@ -4099,7 +4099,7 @@ __metadata:
       optional: true
   bin:
     newrelic-naming-rules: bin/test-naming-rules.js
-  checksum: e060462ec77023c0c9ae54a6019389ffb19ef16dc3c7cc337d4926cb169d32a871da492c90a680ad7fc4c55fb336725d9a7dc7bdaa8e304a84348ce1c7ca02e6
+  checksum: a873f5144bdfed9bbad78a745e57bbafdc1fe82fc559140215532b9643a0f70ab1cbcd3b15cda3e1360017551e416116702fd1f6c08f5a0f0f17da6444cbbe09
   languageName: node
   linkType: hard
 
