@@ -35,7 +35,7 @@
     "@bitomic/logger": "^1.0.0",
     "@bitomic/utilities": "^1.0.0",
     "@octokit/core": "^4.2.1",
-    "@octokit/request": "^6.2.6",
+    "@octokit/request": "^6.2.7",
     "@quority/core": "^4.0.4",
     "@quority/fandom": "^4.0.9",
     "@sapphire/duration": "^1.1.0",
