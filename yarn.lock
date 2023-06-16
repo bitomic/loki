@@ -1685,6 +1685,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/core@npm:^4.2.4":
+  version: 4.2.4
+  resolution: "@octokit/core@npm:4.2.4"
+  dependencies:
+    "@octokit/auth-token": ^3.0.0
+    "@octokit/graphql": ^5.0.0
+    "@octokit/request": ^6.0.0
+    "@octokit/request-error": ^3.0.0
+    "@octokit/types": ^9.0.0
+    before-after-hook: ^2.2.0
+    universal-user-agent: ^6.0.0
+  checksum: ac8ab47440a31b0228a034aacac6994b64d6b073ad5b688b4c5157fc5ee0d1af1c926e6087bf17fd7244ee9c5998839da89065a90819bde4a97cb77d4edf58a6
+  languageName: node
+  linkType: hard
+
 "@octokit/endpoint@npm:^6.0.1":
   version: 6.0.12
   resolution: "@octokit/endpoint@npm:6.0.12"
@@ -4963,7 +4978,7 @@ __metadata:
     "@bitomic/utilities": ^1.0.0
     "@commitlint/cli": ^17.6.5
     "@commitlint/config-conventional": ^17.6.5
-    "@octokit/core": ^4.2.1
+    "@octokit/core": ^4.2.4
     "@octokit/request": ^6.2.7
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
