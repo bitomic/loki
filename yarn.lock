@@ -824,6 +824,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/request-error@npm:^v3.0.3":
+  version: 3.0.3
+  resolution: "@octokit/request-error@npm:3.0.3"
+  dependencies:
+    "@octokit/types": ^9.0.0
+    deprecation: ^2.0.0
+    once: ^1.4.0
+  checksum: 5db0b514732686b627e6ed9ef1ccdbc10501f1b271a9b31f784783f01beee70083d7edcfeb35fbd7e569fa31fdd6762b1ff6b46101700d2d97e7e48e749520d0
+  languageName: node
+  linkType: hard
+
 "@octokit/request@npm:^5.6.3":
   version: 5.6.3
   resolution: "@octokit/request@npm:5.6.3"
@@ -3390,7 +3401,7 @@ __metadata:
     lua-json: ^1.0.1
     mwparser: ^1.3.3
     node-html-parser: ^5.4.2
-    octokit: ^2.0.22
+    octokit: ^2.1.0
     rimraf: ^5.0.1
     ts-dotenv: ^0.9.1
     typescript: 5.1.3
@@ -3937,9 +3948,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"octokit@npm:^2.0.22":
-  version: 2.0.22
-  resolution: "octokit@npm:2.0.22"
+"octokit@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "octokit@npm:2.1.0"
   dependencies:
     "@octokit/app": ^13.1.5
     "@octokit/core": ^4.2.1
@@ -3948,8 +3959,9 @@ __metadata:
     "@octokit/plugin-rest-endpoint-methods": ^7.1.1
     "@octokit/plugin-retry": ^4.1.3
     "@octokit/plugin-throttling": ^5.2.2
+    "@octokit/request-error": ^v3.0.3
     "@octokit/types": ^9.2.2
-  checksum: be1159b0b041f616724b1bd29d1e7fe85da310b927e0a5c48c0a278c87704cab6f6f8634a7afdce2b3151ae3b6373082e409326246b0d77ae00d4627b9da1e72
+  checksum: 612f3c40c0d8d330793476066fcf2a6ed77ad52690201d7c2df11044c4b3dfbefefbe13443ac4037a2128c6f13d59a2f481bc0b315b1bc650e5ff6da9a811e61
   languageName: node
   linkType: hard
 
