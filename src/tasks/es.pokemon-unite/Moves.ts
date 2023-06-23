@@ -90,8 +90,6 @@ export class UserTask extends Task {
 			if ( Object.keys( pokemon ).length ) {
 				module[ display_name ] = pokemon
 			}
-
-			break
 		}
 
 		const wiki = UserTask.getFandomWiki( 'es.pokemon-unite' )
