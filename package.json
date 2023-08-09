@@ -19,8 +19,8 @@
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
-    "@commitlint/cli": "^17.6.7",
-    "@commitlint/config-conventional": "^17.6.7",
+    "@commitlint/cli": "^17.7.0",
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/lua-json": "^1.0.1",
     "@types/node": "^18.17.4",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
