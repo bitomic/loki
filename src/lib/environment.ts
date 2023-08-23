@@ -14,5 +14,8 @@ export const env = load( {
 		default: 6379,
 		type: Number
 	},
-	REDIS_USER: String
+	REDIS_USER: String,
+	TWITCH_CLIENT_ID: String,
+	TWITCH_CLIENT_SECRET: String,
+	TWITCH_REDIS_DB: Number
 } )
