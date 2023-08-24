@@ -40,6 +40,9 @@ export class UserTask extends Task {
 			},
 			method: 'POST'
 		} )
-		await redis.hset( 'unite:twitch-user', await req.body.json() as Record<string, unknown> )
+		const res = await req.body.json() as Record<string, unknown>
+		await redis.hset( 'unite:twitch-user', Object.assign( res, {
+			created_at: Date.now()
+		} ) )
 	}
 }
