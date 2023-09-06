@@ -115,8 +115,6 @@ export class UserTask extends WikiTask {
 
 			template.prettify()
 			await bot.edit( {
-				bot: true,
-				minor: true,
 				summary: 'Actualizando lista de obtenibles.',
 				text: content.toString(),
 				title: page.title

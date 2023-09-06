@@ -95,7 +95,6 @@ export class UserTask extends Task {
 		const wiki = UserTask.getFandomWiki( 'es.pokemon-unite' )
 		const bot = await UserTask.getBot( wiki )
 		await bot.edit( {
-			bot: true,
 			text: format( module ),
 			title: 'Module:Movimientos/datos'
 		} )

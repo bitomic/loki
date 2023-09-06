@@ -32,7 +32,6 @@ export class UserTask extends WikiTask {
 
 		const bot = await UserTask.getBot( wiki )
 		await bot.edit( {
-			bot: true,
 			text: format( data ),
 			title: 'Module:Banner/datos'
 		} )

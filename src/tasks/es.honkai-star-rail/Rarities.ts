@@ -27,7 +27,6 @@ export class UserTask extends WikiTask {
 
 		this.logger.info( 'Updating rarities...' )
 		await bot.edit( {
-			bot: true,
 			text: format( rarities ),
 			title: 'Module:Rarezas/datos'
 		} )

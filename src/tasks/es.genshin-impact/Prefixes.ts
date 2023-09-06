@@ -31,7 +31,6 @@ export class UserTask extends WikiTask {
 
 		this.logger.info( 'Updating prefixes...' )
 		await bot.edit( {
-			bot: true,
 			text: format( data ),
 			title: 'Module:Prefijo/datos'
 		} )
