@@ -60,10 +60,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bitomic/utilities@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@bitomic/utilities@npm:1.0.0"
-  checksum: 43855f56bf88e0dcec6c31f3beffe2903301c2512eb14d84a607a203b61687efbf96304ef04860889d5031289ff783d182d300fd3b9620588a6c9046b514999b
+"@bitomic/utilities@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@bitomic/utilities@npm:1.1.0"
+  checksum: d8a676d6756506d9533eee5e3e8495cd0ac0c80e6e2cce24fc7f27d108406152b69a566af9fd1ba7259c72526d1ee0a9d47cf233bc08c0cd3728339c2a701e2f
   languageName: node
   linkType: hard
 
@@ -3401,7 +3401,7 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
     "@bitomic/logger": ^1.1.0
-    "@bitomic/utilities": ^1.0.0
+    "@bitomic/utilities": ^1.1.0
     "@commitlint/cli": ^17.7.1
     "@commitlint/config-conventional": ^17.7.0
     "@octokit/core": ^4.2.4
