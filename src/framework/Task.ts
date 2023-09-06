@@ -11,7 +11,7 @@ export abstract class Task extends Piece {
 	#logger: typeof logger | null = null
 	public override name = randomUUID()
 
-	protected get logger(): typeof logger {
+	public get logger(): typeof logger {
 		if ( !this.#logger ) {
 			const directory = this.location.directories.at( -1 ) ?? 'unknown'
 			const name = this.location.name.replace( /\.(js|cjs|mjs)/, '' )

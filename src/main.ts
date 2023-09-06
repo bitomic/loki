@@ -14,10 +14,15 @@ void ( async () => {
 
 	new Worker( LokiName, async job => {
 		const { name } = job
-		logger.info( `Running: ${ name }` )
 		const task = tasks.get( name )
-		await task?.run()
-		logger.info( `Finished: ${ name }` )
+		if ( !task ) return
+
+		const { logger } = task
+
+		logger.info( 'Running task' )
+		const t1 = Date.now()
+		await task.run()
+		logger.info( `Finished task in ${ Date.now() - t1 }ms` )
 	}, { connection: redis } )
 
 	const log = async ( level: 'error' | 'info' | 'warn', event: string, job: EventJob ): Promise<void> => {
