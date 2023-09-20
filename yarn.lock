@@ -3427,7 +3427,7 @@ __metadata:
     rimraf: ^5.0.1
     ts-dotenv: ^0.9.1
     typescript: 5.2.2
-    undici: ^5.24.0
+    undici: ^5.25.0
     winston: ^3.10.0
   bin:
     task: dist/bin.js
@@ -5048,12 +5048,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.24.0":
-  version: 5.24.0
-  resolution: "undici@npm:5.24.0"
+"undici@npm:^5.25.0":
+  version: 5.25.0
+  resolution: "undici@npm:5.25.0"
   dependencies:
     busboy: ^1.6.0
-  checksum: 0795b69e0f7e1b2b162bce0d1670e6b44c968960e519f5b450df5196fd9c5102e0838ed854e68e61588f3c2436a3dc3d4390f9bf4a24b04eeb03926fe0eaa599
+  checksum: 6672f0d863a430467b76dd906afe8125f2f0a8102e9703d5cde3e36b4173405daed11d014845df5ee40851b2ecb972e30b859fad602c5ebd0c5dc677d15d2645
   languageName: node
   linkType: hard
 
