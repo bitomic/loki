@@ -1109,10 +1109,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lua-json@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@types/lua-json@npm:1.0.1"
-  checksum: bac66a8eb9244bb2a0b1b13c13bb7183e12a2f17dd193d264c4402244e7f2639f8f58082f3e95eb7efb26ea887361f03823abd77d25d939c327b206f3ded7b76
+"@types/lua-json@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@types/lua-json@npm:1.0.2"
+  checksum: 87d6cb79b95867d52144e25828db16a132a7623387e3d89f5d9b195815395c89c9e12dd898f0d54896ec0206e383d633fd8318b61de8e04cb3056cb108115a3a
   languageName: node
   linkType: hard
 
@@ -3427,7 +3427,7 @@ __metadata:
     "@sapphire/duration": ^1.1.0
     "@sapphire/pieces": ^3.7.0
     "@sapphire/shapeshift": ^3.9.3
-    "@types/lua-json": ^1.0.1
+    "@types/lua-json": ^1.0.2
     "@types/node": ^18.18.5
     "@typescript-eslint/eslint-plugin": ^6.8.0
     "@typescript-eslint/parser": ^6.8.0
