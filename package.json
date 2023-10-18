@@ -21,7 +21,7 @@
     "@bitomic/eslint-config": "^1.0.0",
     "@commitlint/cli": "^17.8.0",
     "@commitlint/config-conventional": "^17.8.0",
-    "@types/lua-json": "^1.0.1",
+    "@types/lua-json": "^1.0.2",
     "@types/node": "^18.18.5",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
