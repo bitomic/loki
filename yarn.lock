@@ -287,10 +287,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/collection@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "@discordjs/collection@npm:1.5.1"
-  checksum: 98cc9cff3c7e6f919097b7ffc96f0a13eba2a90265d187b4db5f8cc09b550efd3d9fc952a21d92a08baf7d9e06d0bfa0467e8d0dbccb2d2f8eb0ee124b8b38d4
+"@discordjs/collection@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@discordjs/collection@npm:1.5.3"
+  checksum: fefed19bea0f69053d195f9d9dc8af07ca5d8c9b1064581e0aa14bda2b70e632b93c164d5ef3e4910f5442369612ff4eec8d52a700aec562510c19b223f67023
   languageName: node
   linkType: hard
 
@@ -971,14 +971,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@sapphire/pieces@npm:3.7.0"
+"@sapphire/pieces@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "@sapphire/pieces@npm:3.7.1"
   dependencies:
-    "@discordjs/collection": ^1.5.1
+    "@discordjs/collection": ^1.5.3
     "@sapphire/utilities": ^3.13.0
-    tslib: ^2.6.0
-  checksum: d2187527766c892604b6e49a1d487b58e59b3053ae37b65662705d918d1822e6a818fa6df7eea44a46e9960c4f411abe5e132d4874c445df56ed3211d950d300
+    tslib: ^2.6.2
+  checksum: c6c3857b1e92f8ecff709898f3646dd636cc38f74d54f7f7728e7ddaa08af74e5d464134f91d5569151e8ae624fbbb3977f793bd23c7f5bc5d0ccf4f9100d09a
   languageName: node
   linkType: hard
 
@@ -3350,7 +3350,7 @@ __metadata:
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
     "@sapphire/duration": ^1.1.0
-    "@sapphire/pieces": ^3.7.0
+    "@sapphire/pieces": ^3.7.1
     "@sapphire/shapeshift": ^3.9.3
     "@types/lua-json": ^1.0.3
     "@types/node": ^20.9.0
@@ -4872,10 +4872,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "tslib@npm:2.6.0"
-  checksum: c01066038f950016a18106ddeca4649b4d76caa76ec5a31e2a26e10586a59fceb4ee45e96719bf6c715648e7c14085a81fee5c62f7e9ebee68e77a5396e5538f
+"tslib@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
   languageName: node
   linkType: hard
 
