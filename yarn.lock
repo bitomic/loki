@@ -971,14 +971,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^3.7.1":
-  version: 3.7.1
-  resolution: "@sapphire/pieces@npm:3.7.1"
+"@sapphire/pieces@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@sapphire/pieces@npm:3.9.0"
   dependencies:
     "@discordjs/collection": ^1.5.3
     "@sapphire/utilities": ^3.13.0
     tslib: ^2.6.2
-  checksum: c6c3857b1e92f8ecff709898f3646dd636cc38f74d54f7f7728e7ddaa08af74e5d464134f91d5569151e8ae624fbbb3977f793bd23c7f5bc5d0ccf4f9100d09a
+  checksum: 13cc08f3efcfe7ec3ae389cb08ad502c7e9ed474a7317a116ff6d17516c9eb708932843a3ff3d811b0cd16b93c79509f399dc060e1df0155944ab4206def087f
   languageName: node
   linkType: hard
 
@@ -3350,7 +3350,7 @@ __metadata:
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
     "@sapphire/duration": ^1.1.0
-    "@sapphire/pieces": ^3.7.1
+    "@sapphire/pieces": ^3.9.0
     "@sapphire/shapeshift": ^3.9.3
     "@types/lua-json": ^1.0.3
     "@types/node": ^20.9.0
