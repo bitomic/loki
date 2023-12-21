@@ -1513,20 +1513,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bullmq@npm:^1.91.1":
-  version: 1.91.1
-  resolution: "bullmq@npm:1.91.1"
+"bullmq@npm:^4.17.0":
+  version: 4.17.0
+  resolution: "bullmq@npm:4.17.0"
   dependencies:
     cron-parser: ^4.6.0
-    get-port: 6.1.2
     glob: ^8.0.3
-    ioredis: ^5.2.2
+    ioredis: ^5.3.2
     lodash: ^4.17.21
     msgpackr: ^1.6.2
-    semver: ^7.3.7
+    node-abort-controller: ^3.1.1
+    semver: ^7.5.4
     tslib: ^2.0.0
     uuid: ^9.0.0
-  checksum: b433c4c69bde4f9dec8cf8e188bddfda33ae4f430ed3e58beb0bf233c9361e8380b99926fa38f355dd042449a7b4aa1e85c46441e0a9f905df30c81cab4be7c1
+  checksum: 5d8520ff7ccffcb115e602658e5f5fe27c25bfa1cc459608071fcedfd59844f76ba094e55970c5c7c7ac6ad763a690ecb54f69736496c563d4c6ddf745153bf4
   languageName: node
   linkType: hard
 
@@ -1946,6 +1946,13 @@ __metadata:
   version: 2.0.1
   resolution: "denque@npm:2.0.1"
   checksum: ec398d1e3c6c8d4f5213dcf9ad74d7faa3b461e29a0019c9742b49a97ac5e16aa7134db45fa9d841e318e7722dd1ba670a474fde9a5b0d870b3a5fc6fe914c30
+  languageName: node
+  linkType: hard
+
+"denque@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "denque@npm:2.1.0"
+  checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
   languageName: node
   linkType: hard
 
@@ -2510,13 +2517,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-port@npm:6.1.2":
-  version: 6.1.2
-  resolution: "get-port@npm:6.1.2"
-  checksum: e3c3d591492a11393455ef220f24c812a28f7da56ec3e4a2512d931a1f196d42850b50ac6138349a44622eda6dc3c0ccd8495cd91376d968e2d9e6f6f849e0a9
-  languageName: node
-  linkType: hard
-
 "get-stream@npm:^6.0.0":
   version: 6.0.1
   resolution: "get-stream@npm:6.0.1"
@@ -2887,6 +2887,23 @@ __metadata:
     redis-parser: ^3.0.0
     standard-as-callback: ^2.1.0
   checksum: 8d650326063de4e37ec7ab38f00dde555284d9fc99fcbe698a4b0d65214920b8cb0f9483c0390fef8d81e9ee26e65380c93113cdedee184206815787bf88cec7
+  languageName: node
+  linkType: hard
+
+"ioredis@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "ioredis@npm:5.3.2"
+  dependencies:
+    "@ioredis/commands": ^1.1.1
+    cluster-key-slot: ^1.1.0
+    debug: ^4.3.4
+    denque: ^2.1.0
+    lodash.defaults: ^4.2.0
+    lodash.isarguments: ^3.1.0
+    redis-errors: ^1.2.0
+    redis-parser: ^3.0.0
+    standard-as-callback: ^2.1.0
+  checksum: 9a23559133e862a768778301efb68ae8c2af3c33562174b54a4c2d6574b976e85c75a4c34857991af733e35c48faf4c356e7daa8fb0a3543d85ff1768c8754bc
   languageName: node
   linkType: hard
 
@@ -3379,7 +3396,7 @@ __metadata:
     "@types/node": ^20.10.5
     "@typescript-eslint/eslint-plugin": ^6.15.0
     "@typescript-eslint/parser": ^6.15.0
-    bullmq: ^1.91.1
+    bullmq: ^4.17.0
     eslint: ^8.56.0
     husky: ^8.0.3
     ioredis: ^5.2.2
@@ -3788,6 +3805,13 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
+  languageName: node
+  linkType: hard
+
+"node-abort-controller@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "node-abort-controller@npm:3.1.1"
+  checksum: 2c340916af9710328b11c0828223fc65ba320e0d082214a211311bf64c2891028e42ef276b9799188c4ada9e6e1c54cf7a0b7c05dd9d59fcdc8cd633304c8047
   languageName: node
   linkType: hard
 
@@ -4448,7 +4472,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.3.7":
+"semver@npm:^7.3.5":
   version: 7.3.7
   resolution: "semver@npm:7.3.7"
   dependencies:
