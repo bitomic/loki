@@ -969,14 +969,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "@sapphire/pieces@npm:3.9.0"
+"@sapphire/pieces@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "@sapphire/pieces@npm:4.2.2"
   dependencies:
     "@discordjs/collection": ^1.5.3
-    "@sapphire/utilities": ^3.13.0
+    "@sapphire/utilities": ^3.15.3
     tslib: ^2.6.2
-  checksum: 13cc08f3efcfe7ec3ae389cb08ad502c7e9ed474a7317a116ff6d17516c9eb708932843a3ff3d811b0cd16b93c79509f399dc060e1df0155944ab4206def087f
+  checksum: dcd0f426484e4d352b3409c1e7531789f812775f73f7c0f9e4599423c26884a307dfe3ac22ab456ce4222988584365c2e1dedd966e5ecb48a5e1f49cc1c4a713
   languageName: node
   linkType: hard
 
@@ -1000,10 +1000,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.13.0":
-  version: 3.13.0
-  resolution: "@sapphire/utilities@npm:3.13.0"
-  checksum: c2f901c104459e01a24af71871294b700ff188925cf050558880486de6564792df2b7549796dd9fd6f309c12af7d4e2b2d2f4069ec9d4c27d9c3998eca3ac9a9
+"@sapphire/utilities@npm:^3.15.3":
+  version: 3.15.3
+  resolution: "@sapphire/utilities@npm:3.15.3"
+  checksum: 2868bfcf7bf4f829e0fe9cf0dcb7969c349a1823714a805736dbded38653ed5c6042cca1e68f20193094de29688f71a0451588dc081d26f9651368d23a62f705
   languageName: node
   linkType: hard
 
@@ -3354,7 +3354,7 @@ __metadata:
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
     "@sapphire/duration": ^1.1.0
-    "@sapphire/pieces": ^3.9.0
+    "@sapphire/pieces": ^4.2.2
     "@sapphire/shapeshift": ^3.9.3
     "@types/lua-json": ^1.0.3
     "@types/node": ^20.11.5
