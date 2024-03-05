@@ -74,7 +74,7 @@ jobs:
   Deploy:
     name: Deploy using Docker
     needs: [Publish]
-    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@f6f800ff7b2f4399e649ab9d61e185d89f255358
+    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@4d497292453e226c963300b9a90dccb5537a7ef5
     secrets:
       DOCKER_NETWORK: "${{ secrets.DOCKER_NETWORK }}"
       DOPPLER_TOKEN: "${{ secrets.DOPPLER_TOKEN }}"
