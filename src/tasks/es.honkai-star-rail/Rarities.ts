@@ -13,8 +13,8 @@ export class UserTask extends WikiTask {
 	public async run(): Promise<void> {
 		const wiki = UserTask.getFandomWiki( 'es.honkai-star-rail' )
 		const bot = await UserTask.getBot( wiki )
-		const itemTypes = [ 'Personajes', 'Recursos', 'Conos de luz', 'Objetos raros' ]
-		const rarities: Record<string, number> = {}
+		const itemTypes = [ 'Personajes', 'Recursos', 'Conos de luz' ]
+		const rarities: Record<string, number | string> = {}
 		for ( const itemType of itemTypes ) {
 			for ( let i = 1; i <= 5; i++ ) {
 				const category = `${ itemType } de ${ i } estrellas`
@@ -25,10 +25,24 @@ export class UserTask extends WikiTask {
 			}
 		}
 
-		// Objetos raros
-		const pages = await this.getPagesInCategory( wiki, 'Objetos raros' )
+		// Objetos raros con rareza
+		for ( let i = 1; i <= 3; i++ ) {
+			const pages = await this.getPagesInCategory( wiki, `Objetos raros de ${ i } estrellas` )
+			for ( const page of pages ) {
+				rarities[ page ] = `raro-${ i }`
+			}
+		}
+
+		// Objetos raros negativos
+		let pages = await this.getPagesInCategory( wiki, 'Objetos raros negativos' )
 		for ( const page of pages ) {
-			rarities[ page ] ??= -1
+			rarities[ page ] = 'negativo'
+		}
+
+		// Objetos raros ponderados
+		pages = await this.getPagesInCategory( wiki, 'Objetos raros ponderados' )
+		for ( const page of pages ) {
+			rarities[ page ] = 'ponderado'
 		}
 
 		this.logger.info( 'Updating rarities...' )
