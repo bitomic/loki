@@ -40,7 +40,7 @@
     "@quority/fandom": "^4.0.9",
     "@sapphire/duration": "^1.1.0",
     "@sapphire/pieces": "^3.9.0",
-    "@sapphire/shapeshift": "^3.9.3",
+    "@sapphire/shapeshift": "^4.0.0",
     "bullmq": "^1.91.1",
     "ioredis": "^5.2.2",
     "lua-json": "^1.0.1",
