@@ -350,13 +350,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/busboy@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@fastify/busboy@npm:2.0.0"
-  checksum: 41879937ce1dee6421ef9cd4da53239830617e1f0bb7a0e843940772cd72827205d05e518af6adabe6e1ea19301285fff432b9d11bad01a531e698bea95c781b
-  languageName: node
-  linkType: hard
-
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -3237,7 +3230,7 @@ __metadata:
     rimraf: ^6.0.1
     ts-dotenv: ^0.9.1
     typescript: 5.6.3
-    undici: ^5.28.4
+    undici: ^6.20.0
     winston: ^3.15.0
   bin:
     task: dist/bin.js
@@ -4567,12 +4560,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.28.4":
-  version: 5.28.4
-  resolution: "undici@npm:5.28.4"
-  dependencies:
-    "@fastify/busboy": ^2.0.0
-  checksum: a8193132d84540e4dc1895ecc8dbaa176e8a49d26084d6fbe48a292e28397cd19ec5d13bc13e604484e76f94f6e334b2bdc740d5f06a6e50c44072818d0c19f9
+"undici@npm:^6.20.0":
+  version: 6.20.0
+  resolution: "undici@npm:6.20.0"
+  checksum: 90c2bf3945fe2565eda22f1b983ab700ac778b21d5f9e62c831e096ccffaaceee7df7d0c05fb8766a87faedc6b111b24630527a5e6b7d92af35fddec2d921fb7
   languageName: node
   linkType: hard
 
