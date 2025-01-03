@@ -22,7 +22,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@types/lua-json": "^1.0.3",
-    "@types/node": "^22.10.3",
+    "@types/node": "^22.10.4",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^8.57.1",
