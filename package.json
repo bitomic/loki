@@ -27,7 +27,7 @@
     "@typescript-eslint/parser": "^8.39.0",
     "eslint": "^8.57.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.4",
+    "lint-staged": "^16.1.5",
     "rimraf": "^6.0.1",
     "typescript": "5.9.2"
   },
