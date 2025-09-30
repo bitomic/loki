@@ -500,15 +500,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dabh/diagnostics@npm:^2.0.6":
-  version: 2.0.6
-  resolution: "@dabh/diagnostics@npm:2.0.6"
+"@dabh/diagnostics@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@dabh/diagnostics@npm:2.0.7"
   dependencies:
-    "@so-ric/colorspace": ^1.1.4
+    "@so-ric/colorspace": ^1.1.6
     enabled: 2.0.x
     fix-esm: ^1.0.1
     kuler: ^2.0.0
-  checksum: 07d61ede561d7d4ff973e4084f1bdb6ce30285eb217521b0ce152c9471c5de2699c1e55fff164e52720b7e94104258b478da1374f5da87a1fa018c591e172037
+  checksum: c53c4d3e4f6865edc3491eef73b89a3b2c64154cc65cfc9270a8f652486048076383efc78ff75bc0419de27f5b0292fbdcbaf88ef75d8576a1810ca0c730bd52
   languageName: node
   linkType: hard
 
@@ -1278,13 +1278,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@so-ric/colorspace@npm:^1.1.4":
-  version: 1.1.5
-  resolution: "@so-ric/colorspace@npm:1.1.5"
+"@so-ric/colorspace@npm:^1.1.6":
+  version: 1.1.6
+  resolution: "@so-ric/colorspace@npm:1.1.6"
   dependencies:
     color: ^5.0.2
     text-hex: 1.0.x
-  checksum: ed82235e5cd208e204dacd8523014f0eda6b50799a0c88254d880986101d7e2dfa76a6c475132b64b0edb612e04c6d4c020d604edc2a26f876e39178a04c6a03
+  checksum: 893abfe47f2c23c71716c53bec6b3f700b11563d6993afb2eca1445b694cc0daf839353c0663a6139a1223289b73c629e5e9ccfcf54294b5eec1a6bc77f997de
   languageName: node
   linkType: hard
 
@@ -3605,7 +3605,7 @@ __metadata:
     ts-dotenv: ^0.9.1
     typescript: 5.9.2
     undici: ^5.29.0
-    winston: ^3.18.1
+    winston: ^3.18.2
   bin:
     task: dist/bin.js
   languageName: unknown
@@ -5111,12 +5111,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"winston@npm:^3.18.1":
-  version: 3.18.1
-  resolution: "winston@npm:3.18.1"
+"winston@npm:^3.18.2":
+  version: 3.18.2
+  resolution: "winston@npm:3.18.2"
   dependencies:
     "@colors/colors": ^1.6.0
-    "@dabh/diagnostics": ^2.0.6
+    "@dabh/diagnostics": ^2.0.7
     async: ^3.2.3
     is-stream: ^2.0.0
     logform: ^2.7.0
@@ -5126,7 +5126,7 @@ __metadata:
     stack-trace: 0.0.x
     triple-beam: ^1.3.0
     winston-transport: ^4.9.0
-  checksum: 6c72753cd139ad9265334aee116918933966b0fe857df7eb9cfb26f4c3ecb7bc81b4491fbfb5aac00d56a8a4771468139c00c9c410339d067256261642ca4a35
+  checksum: 60fa33829081f1f9e0511f360507e8181c0fcb8ebe26cf33ea8c6229f15af1be84c8bfcb077542fb8f8b2f4910cf69c21501c5e7fe3b33515b1b4279c64713ba
   languageName: node
   linkType: hard
 
