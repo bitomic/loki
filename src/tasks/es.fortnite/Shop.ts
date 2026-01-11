@@ -26,6 +26,7 @@ export class UserTask extends Task {
 			const text = format( shop as object )
 
 			await bot.edit( {
+				summary: 'Actualizando tienda a partir de los datos de fortnite-api.',
 				text,
 				title: `Module:Tienda/${ shopDate }/${ language }`
 			} )
