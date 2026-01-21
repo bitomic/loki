@@ -57,7 +57,11 @@ export class UserTask extends WikiTask {
 				const record = result[ title ]
 				if ( !record ) continue
 
-				record.quality = `${ i }`
+				if ( title === 'Manekín' || title === 'Aloy' ) {
+					record.quality = `${ i }a`
+				} else {
+					record.quality = `${ i }`
+				}
 			}
 		}
 
