@@ -8,7 +8,7 @@ import { WikiTask } from '../../framework'
 export class UserTask extends WikiTask {
 	public override jobOptions: JobsOptions = {
 		repeat: {
-			every: Time.Hour
+			every: Time.Hour * 8,
 		}
 	}
 
@@ -28,7 +28,7 @@ export class UserTask extends WikiTask {
 		for await ( const page of wiki.iterPages( banners ) ) {
 			if ( page.missing ) continue
 			const content = parse( page.revisions[ 0 ].slots.main.content )
-			const template = content.findTemplate( 'Obtenibles en salto' ).templates.at( 0 )
+			const template = content.templates.find( t => t.name.replace( /_/g, ' ' ).toLowerCase() === 'obtenibles en salto' )
 			if ( !template ) {
 				this.logger.warn( `Couldn't find template in page ${ page.title }.` )
 				continue
@@ -44,7 +44,7 @@ export class UserTask extends WikiTask {
 			}
 
 			const englishContent = parse( englishPage.replace( /<!-+ *.*?>/g, '' ) )
-			const warpPool = englishContent.findTemplate( 'Warp Pool' ).templates.at( 0 )
+			const warpPool = englishContent.templates.find( t => t.name.replace( /_/g, ' ' ).toLowerCase() === 'warp pool' )
 			if ( !warpPool ) {
 				this.logger.warn( `No warp pool template in page ${ englishName }.` )
 				continue
@@ -135,7 +135,7 @@ export class UserTask extends WikiTask {
 			} )
 
 			for ( const item of result ) {
-				const translation = item.langlinks.at( 0 )?.title
+				const translation = item.langlinks?.at( 0 )?.title // eslint-disable-line @typescript-eslint/no-unnecessary-condition
 				if ( !translation ) {
 					this.logger.warn( `No interwiki in page ${ item.title }.` )
 					continue

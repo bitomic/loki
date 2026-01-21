@@ -81,7 +81,7 @@ export class UserTask extends WikiTask {
 			if ( page.missing ) continue
 			const { content } = page.revisions[ 0 ].slots.main
 			const parsed = parse( content )
-			const infobox = parsed.templates.find( t => t.name === 'Infobox Artefacto' )
+			const infobox = parsed.templates.find( t => t.name.replace( /_/g, ' ' ).toLowerCase() === 'infobox artefacto' )
 			if ( !infobox ) continue
 
 			for ( const part of parts ) {

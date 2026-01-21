@@ -24,8 +24,8 @@ export class UserTask extends WikiTask {
 		for await ( const page of wiki.iterPages( pages ) ) {
 			if ( page.missing ) continue
 			const parsed = parse( page.revisions[ 0 ].slots.main.content )
-			const template = parsed.templates.find( i => i.name === 'Obtenibles en banner' )
-			const infobox = parsed.templates.find( i => i.name === 'Infobox Banner' )
+			const template = parsed.templates.find( i => i.name.replace( /_/g, ' ' ).toLowerCase() === 'obtenibles en banner' )
+			const infobox = parsed.templates.find( i => i.name.replace( /_/g, ' ' ).toLowerCase() === 'infobox banner' )
 			if ( !template || !infobox ) continue
 			data[ page.title ] = this.getData( template, infobox )
 		}

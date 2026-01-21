@@ -130,7 +130,7 @@ export class UserTask extends WikiTask {
 			if ( page.missing ) continue
 
 			const parsed = parse( page.revisions[ 0 ].slots.main.content )
-			const infobox = parsed.templates.find( t => t.name.toLowerCase() === 'infobox artefacto' )
+			const infobox = parsed.templates.find( t => t.name.replace( /_/g, ' ' ).toLowerCase() === 'infobox artefacto' )
 			const rarity = infobox?.getParameter( 'rareza' )?.value
 			if ( !rarity ) continue
 
