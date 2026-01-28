@@ -25,12 +25,22 @@ export class UserTask extends Task {
 			this.logger.info( `Updating shop: ${ shopDate }/${ language }` )
 			const text = format( shop as object )
 
-			await bot.edit( {
-				summary: 'Actualizando tienda a partir de los datos de fortnite-api.',
-				text,
-				title: `Module:Tienda/${ shopDate }/${ language }`
-			} )
-			await sleep( 3000 )
+			try {
+				await bot.edit( {
+					summary: 'Actualizando tienda a partir de los datos de fortnite-api.',
+					text,
+					title: `Module:Tienda/${ shopDate }/${ language }`
+				} )
+				await sleep( 3000 )
+			} catch ( e ) {
+				this.logger.error( e )
+				await bot.edit( {
+					summary: 'Actualizando tienda a partir de los datos de fortnite-api fuera de un módulo debido a un error.',
+					text,
+					title: `User:Botomic/${ shopDate }/${ language }`
+				} )
+				await sleep( 3000 )
+			}
 		}
 	}
 
