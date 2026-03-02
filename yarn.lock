@@ -956,21 +956,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/duration@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@sapphire/duration@npm:1.1.0"
-  checksum: bf145249804560e20621fb593110dc4084a7597f04669695250921ccc7ca2e867a1f0a914c3fdfc9d120ee13689668a104b86861f312ffcce293e9551f4359c9
+"@sapphire/duration@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@sapphire/duration@npm:1.2.0"
+  checksum: 4ac6aa02e3f6542a824842a05c65d4bccadfe81d96eefc52c4844f658739770272a2a254cd9356fcf9b956a3ed715593a729b530ef10f2278e7dc6dcfd14c8db
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "@sapphire/pieces@npm:3.9.0"
+"@sapphire/pieces@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@sapphire/pieces@npm:3.10.0"
   dependencies:
     "@discordjs/collection": ^1.5.3
     "@sapphire/utilities": ^3.13.0
     tslib: ^2.6.2
-  checksum: 13cc08f3efcfe7ec3ae389cb08ad502c7e9ed474a7317a116ff6d17516c9eb708932843a3ff3d811b0cd16b93c79509f399dc060e1df0155944ab4206def087f
+  checksum: 7ac85e56f935b11072b3c520fb07aad3193d2f391654e24ea8b164a94578ef24ae49d2310e7d629db549e4379a2875de3247323f32e6e617e30e291d51724d57
   languageName: node
   linkType: hard
 
@@ -984,13 +984,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/shapeshift@npm:^3.9.3":
-  version: 3.9.3
-  resolution: "@sapphire/shapeshift@npm:3.9.3"
+"@sapphire/shapeshift@npm:^3.9.7":
+  version: 3.9.7
+  resolution: "@sapphire/shapeshift@npm:3.9.7"
   dependencies:
     fast-deep-equal: ^3.1.3
     lodash: ^4.17.21
-  checksum: f93ab924566dc20a066776128eeb3693b97a1576a359b61d396835541f2bf8ecb3f482ff406cc038a3a4bc266d5f9b9f9e1c733ddbf1cce2c97c729ce047b5e6
+  checksum: a36032ff8fc54056ea21e0cdbbea84c3d80c0c0fb19b2685e14e29111ab9c1172c9273e1e54d49e2a62ba5a393f18b3dab9330d34b97d3519d572e32dd64913d
   languageName: node
   linkType: hard
 
@@ -3119,9 +3119,9 @@ __metadata:
     "@octokit/request": ^6.2.8
     "@quority/core": ^4.0.4
     "@quority/fandom": ^4.0.9
-    "@sapphire/duration": ^1.1.0
-    "@sapphire/pieces": ^3.9.0
-    "@sapphire/shapeshift": ^3.9.3
+    "@sapphire/duration": ^1.2.0
+    "@sapphire/pieces": ^3.10.0
+    "@sapphire/shapeshift": ^3.9.7
     "@types/lua-json": ^1.0.3
     "@types/node": ^22.19.13
     "@typescript-eslint/eslint-plugin": ^8.56.1
