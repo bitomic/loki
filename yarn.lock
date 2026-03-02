@@ -399,6 +399,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ioredis/commands@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@ioredis/commands@npm:1.5.1"
+  checksum: 8e9c88154d2aba3cad5cdaed01b47eca9649a3c1e869f28a31377fda0147e5c1b90d9d5dee6f6a4dd9154dba5be345071208ecf8aa5c7fffcd0e04bacaddfbb9
+  languageName: node
+  linkType: hard
+
 "@ioredis/commands@npm:^1.1.1":
   version: 1.1.1
   resolution: "@ioredis/commands@npm:1.1.1"
@@ -1923,6 +1930,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"denque@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "denque@npm:2.1.0"
+  checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
+  languageName: node
+  linkType: hard
+
 "depd@npm:^1.1.2":
   version: 1.1.2
   resolution: "depd@npm:1.1.2"
@@ -2697,6 +2711,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ioredis@npm:^5.10.0":
+  version: 5.10.0
+  resolution: "ioredis@npm:5.10.0"
+  dependencies:
+    "@ioredis/commands": 1.5.1
+    cluster-key-slot: ^1.1.0
+    debug: ^4.3.4
+    denque: ^2.1.0
+    lodash.defaults: ^4.2.0
+    lodash.isarguments: ^3.1.0
+    redis-errors: ^1.2.0
+    redis-parser: ^3.0.0
+    standard-as-callback: ^2.1.0
+  checksum: 6c6b966ca8e34c05abc3a436ca602c24518e1613bad4cd1b19df48b36deca4f5383b0f260309a869618a53354322c892ab744d933f0f7c274dd8e84e5ea9aa24
+  languageName: node
+  linkType: hard
+
 "ioredis@npm:^5.2.2":
   version: 5.2.2
   resolution: "ioredis@npm:5.2.2"
@@ -3129,7 +3160,7 @@ __metadata:
     bullmq: ^1.91.1
     eslint: ^8.57.1
     husky: ^9.1.7
-    ioredis: ^5.2.2
+    ioredis: ^5.10.0
     lint-staged: ^16.3.1
     lua-json: ^1.0.1
     mwparser: ^1.3.3
