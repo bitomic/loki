@@ -1084,12 +1084,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.19.17":
-  version: 22.19.17
-  resolution: "@types/node@npm:22.19.17"
+"@types/node@npm:^22.19.18":
+  version: 22.19.18
+  resolution: "@types/node@npm:22.19.18"
   dependencies:
     undici-types: ~6.21.0
-  checksum: c817456948b0453b15a15d7865faea0b0de9bc93e9725788a62978f05994702b673029300ce9667d52ce439acfb43ecd8122acb8eba9145c26b1c4d22e67a234
+  checksum: 5750ece9067be5adcb9bb2dc93080a61f89948d1485010a12a5394949b299aa6087ee281fc5b66a230ae475b7ed4197f61884d5ac0df67b6f4db34df913a1f93
   languageName: node
   linkType: hard
 
@@ -3100,7 +3100,7 @@ __metadata:
     "@sapphire/pieces": ^3.9.0
     "@sapphire/shapeshift": ^3.9.3
     "@types/lua-json": ^1.0.3
-    "@types/node": ^22.19.17
+    "@types/node": ^22.19.18
     "@typescript-eslint/eslint-plugin": ^8.59.2
     "@typescript-eslint/parser": ^8.59.2
     bullmq: ^1.91.1
