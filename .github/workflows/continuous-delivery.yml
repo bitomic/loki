@@ -38,7 +38,7 @@ jobs:
         uses: saionaro/extract-package-version@a5ea15b23669502732d230f62cabfa92fb137a38 # v1.4.0
         
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # tag=v1.14.1
+        uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
